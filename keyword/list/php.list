@@ -1,0 +1,59 @@
+static var class function new abstract public private protected extends implements this self
+if else for exit while continue switch break foreach as try catch return debug_backtrace
+TRUE FALSE NULL
+GLOBALS
+stdClass Exception DOMDocument  scalar
+ini_set display_errors
+display_errors error_reporting E_ALL E_STRICT E_ERROR E_NOTICE
+__construct __destruct __autoload __get __set __isset __unset __call __sleep __weakup __toString
+include include_once require require_once parse_ini_file nl2br
+get_class get_parent_class is_subclass_of instanceof ctype_digit
+func_num_args func_get_arg func_get_args call_user_func_array
+PHP_SELF REQUEST_URI PHP_OS __FILE__ __METHOD__ DIRECTORY_SEPARATOR STDIN PHP_EOL
+_SERVER DOCUMENT_ROOT _REQUEST _GET _POST _COOKIE setcookie
+_SESSION session_start session_destroy session_set_save_handler 
+STR_PAD_LEFT
+_FILES move_uploaded_file
+session_cache_limiter session_cache_expire session_save_path ini_set session_name session_id
+array object resource null true false is_dir is_array set unset isset clone global range shuffle
+echo print print_r var_dump var_export substr count rtrim ltrim trim
+settype md5_file
+
+bindec decbin dechex decoct hexdec octdec base_convert
+
+strtoupper strtolower strlen chr str_repeat split strrev
+str_split ucwords json_decode json_encode urldecode urlencode
+mb_internal_encoding mb_strlen mb_substr bin2hex hexdec decbin decoct dechex ord
+in_array array_key_exists array_change_key_case array_intersect
+gettype preg_match preg_replace htmlspecialchars htmlspecialchars_decode similar_text
+explode empty array_values array_keys array_shift array_push array_pop array_merge array_unique array_map join
+array_reverse array_fill array_splice
+microtime date strftime gmdate time mktime flush sleep strtotime
+fopen flock fclose ftruncate fread fwrite fseek rewind feof fgetcsv fputcsv chmod
+file_get_contents file_put_contents FILE_APPEND iconv
+file_exists unlink class_exists function_exists glob clearstatcache FILE_APPEND
+set_time_limit serialize unserialize http_response_header php_errormsg
+get_included_files get_object_vars
+mysql_connect mysql_select_db mysql_query mysql_unbuffered_query
+mysql_close mysql_fetch_array mysql_free_result mysql_error
+MYSQL_ASSOC MYSQL_NUM 
+ob_start ob_end_flush ob_end_clean spl_autoload_register register_shutdown_function
+version_compare sys_get_temp_dir pathinfo
+curl_init curl_setopt curl_exec curl_close
+is_numeric
+ip2long
+number_format sprintf base64_encode base64_decode
+xml_parser_create xml_parse_into_struct
+stream_context_create http_build_query
+ftok msg_get_queue msg_remove_queue msg_send
+filectime filemtime fileatime
+getimagesize
+parse_url pathinfo
+getcwd chdir realpath
+getopt
+
+select update insert from where trunc to_date to_char order sysdate
+
+rq_dt getAll getRow getOne Execute RedirectResult exec post SelectLimit initDb
+errormsg db2Obj dbObj close logObj
+BeginTrans CommitTrans RollbackTrans

@@ -1,0 +1,104 @@
+console log error
+debugger time timeEnd
+CollectGarbage collect
+
+script javascript document referrer window location body navigator userAgent
+
+hasFocus
+
+event
+wheelDelta detail
+which button
+keyCode altKey ctrlKey shiftKey
+
+onmousewheel DOMMouseScroll
+
+activeElement oncontextmenu
+addEventListener removeEventListener attachEvent detachEvent function undefined var alert return
+
+className
+documentElement ownerDocument
+scrollIntoView 
+compatMode BackCompat CSS1Compat
+clientHeight clientWidth scrollHeight scrollWidth offsetHeight offsetWidth
+getBoundingClientRect
+scrollTo
+scrollLeft scrollTop offsetTop offsetLeft
+defaultView	getComputedStyle getPropertyValue currentStyle
+getSelection removeAllRanges
+elementFromPoint
+selection createRange empty clear
+execCommand
+this length prototype arguments callee caller style
+toString
+createTextRange moveStart moveEnd findText select
+write writeln hostname search href domain title rowIndex
+innerHTML outerHTML innerText textContent outerText cssText
+typeof instanceof constructor __proto__ 
+RegExp Array Object
+getElementsByName getElementById getElementsByTagName nodeName nodeValue nodeType
+decodeURIComponent encodeURIComponent encodeURI decodeURI escape unescape
+parentNode firstChild lastChild previousSibling nextSibling children
+cellSpacing cellPadding width height
+style
+getElementsByClassName querySelectorAll
+
+RegExp test exec lastIndex
+
+contentDocument windowDocument ActiveXObject Microsoft XMLHTTP XMLHttpRequest
+setRequestHeader getResponseHeader getAllResponseHeaders responseText
+open send onreadystatechange status statusText DOMContentLoaded
+preventDefault stopPropagation returnValue cancelBubble
+
+new Image
+Date parse getFullYear getMonth getDate getHours getMinutes getSeconds getMilliseconds
+Math pow sqrt PI random floor ceil round cos sin
+parseFloat parseInt toFixed toLocaleString
+Array charAt indeOf push pop shift unshift reverse
+String fromCharCode charCodeAt toLowerCase toUpperCase
+
+nextElementSibling previousElementSibling firstElementChild lastElementChild
+srcElement target
+
+deleteCell insertCell rows cells caption cellPadding cellSpacing rowIndex deleteRow insertRow options
+moveRow
+currentStyle getComputedStyle
+
+insertAdjacentHTML
+insertBefore createElement createTextNode replaceChild appendChild removeChild cloneNode
+createAttribute removeAttribute setAttribute getAttribute createDocumentFragment
+onsubmit onclick onload onerror
+click
+setTimeout clearTimeout
+setInterval clearInterval
+replace match split
+
+canvas getContext 2d
+moveTo lineTo
+lineCap butt round square
+lineJoin round bevel miter
+lineWidth
+miterLimit
+save restore beginPath closePath stroke fill arc clip
+fillRect strokeRect clearRect
+fillStyle strokeStyle clearStyle
+textAlign textBaseline font
+measureText
+fillText
+createLinearGradient addColorStop
+createRadialGradient
+createPattern
+quadraticCurveTo bezierCurveTo
+drawImage getImageData putImageData toDataURL
+shadowOffsetX shadowOffsetY shadowBlur shadowColor
+globalAlpha
+globalCompositeOperation
+source-over destination-over source-in destination-in
+source-out destination-out source-out destination-out
+source-atop destination-atop lighter darker xor copy
+translate rotate scale transform setTransform
+
+setCustomValidity checkValidity
+
+jQuery parent parents filter find after before text show hide attr html toggleClass removeClass addClass
+append appendTo
