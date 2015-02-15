@@ -34,7 +34,7 @@ call pathogen#infect()
 filetype plugin on
 set nocompatible
 set tags=./tags,tags
-" set tags=./tags,tags,E:/Projects/php/tags
+" set tags=./tags,tags,E:/Projects/tags
 " }}}
 
 " encoding set{{{
@@ -260,7 +260,7 @@ function! MY_abbreviate()
 	let l:opts = Get_line_option( getline('.') )
 	"php http{{{
 	if 'html'==l:opts[0]
-		for item in [ {'key': 'iecp', 'val': '<!--[if lt IE 8]><i class="iecp"></i><![endif]-->'},
+		for item in [ {'key': 'iecp', 'val': '<!--[if lt IE 8]><p class="iecp"></p><![endif]-->'},
 					\]
 			if item.key==l:opts[1]
 				exec "normal S" . item.val
