@@ -108,7 +108,7 @@ func! Run()
     silent! exe src_winnr . 'wincmd w'
 endfunc
 
-autocmd FileType c,cpp,java,php,javascript  nnoremap <buffer><silent> ,c  :call Compile()<cr>
-autocmd FileType c,cpp,java,php,javascript,less,scss  nnoremap <buffer><silent> ,r  :call Run()<cr>
-autocmd FileType c,cpp,java,php,tmp,qf,javascript,less,scss  nnoremap <buffer><silent> ,h  :call HideOutput()<cr>
+autocmd FileType c,cpp,java,php,javascript nnoremap <buffer><silent> ,c :call Compile()<cr>
+autocmd FileType c,cpp,java,php,javascript,less,scss nnoremap <buffer><silent> ,r :call Run()<cr>
+autocmd FileType c,cpp,java,php,tmp,qf,javascript,less,scss nnoremap <buffer><silent> ,h :call HideOutput()<cr>
 autocmd FileType * set autoindent smartindent autochdir

@@ -6,6 +6,8 @@ script javascript document referrer window location body navigator userAgent
 
 hasFocus
 
+Date setFullYear setMonth setDate setHours setMinutes setSeconds setMilliseconds setTime
+
 event
 wheelDelta detail
 which button
