@@ -2,9 +2,9 @@ console log error
 debugger time timeEnd
 CollectGarbage collect
 
-script javascript document referrer window location body navigator userAgent
+javascript document referrer window location body navigator userAgent
 
-hasFocus
+hasFocus activeElement
 
 Date setFullYear setMonth setDate setHours setMinutes setSeconds setMilliseconds setTime
 
@@ -31,7 +31,7 @@ getSelection removeAllRanges
 elementFromPoint
 selection createRange empty clear
 execCommand
-this length prototype arguments callee caller style
+this length prototype arguments callee caller
 toString
 createTextRange moveStart moveEnd findText select
 write writeln hostname search href domain title rowIndex
@@ -67,6 +67,7 @@ moveRow
 currentStyle getComputedStyle
 
 insertAdjacentHTML
+beforebegin afterbegin beforeend afterend
 insertBefore createElement createTextNode replaceChild appendChild removeChild cloneNode
 createAttribute removeAttribute setAttribute getAttribute createDocumentFragment
 onsubmit onclick onload onerror
