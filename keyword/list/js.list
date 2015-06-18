@@ -2,7 +2,7 @@ console log error
 debugger time timeEnd
 CollectGarbage collect
 
-javascript document referrer window location body navigator userAgent
+script javascript document referrer window location body navigator userAgent
 
 hasFocus activeElement
 
