@@ -262,6 +262,7 @@ function! MY_abbreviate()
 	"php http{{{
 	if 'html'==l:opts[0]
 		for item in [ {'key': 'iecp', 'val': '<!--[if lt IE 8]><p class="iecp"></p><![endif]-->'},
+					\ {'key': 'arrow', 'val': '<!--[if lt IE 8]><p class="before"></p><p class="after"></p><![endif]-->'},
 					\]
 			if item.key==l:opts[1]
 				exec "normal S" . item.val
