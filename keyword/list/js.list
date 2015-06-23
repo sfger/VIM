@@ -66,8 +66,7 @@ deleteCell insertCell rows cells caption cellPadding cellSpacing rowIndex delete
 moveRow
 currentStyle getComputedStyle
 
-insertAdjacentHTML
-beforebegin afterbegin beforeend afterend
+insertAdjacentHTML beforeBegin afterBegin beforeEnd afterEnd
 insertBefore createElement createTextNode replaceChild appendChild removeChild cloneNode
 createAttribute removeAttribute setAttribute getAttribute createDocumentFragment
 onsubmit onclick onload onerror
