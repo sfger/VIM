@@ -121,9 +121,11 @@ map <silent> <M-n> :if &guioptions =~# 'b' <Bar>
 
 " map group{{{
 " window and tab map{{{
-autocmd GUIEnter * simalt ~x
-map <C-Up> :simalt ~x<CR>
-map <C-Down> :simalt ~r<CR>
+if has("win32")
+	autocmd GUIEnter * simalt ~x
+	map <C-Up> :simalt ~x<CR>
+	map <C-Down> :simalt ~r<CR>
+endif
 map <C-t> :tabnew<CR>
 
 map <C-M-Down> <C-w>-
