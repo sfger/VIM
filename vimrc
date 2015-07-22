@@ -52,7 +52,7 @@ set fileformats=dos,unix
 " set encoding=utf-8
 set fileencodings=utf-bom,utf-8,gbk,gb2312,gb18030,cp936,latin1
 " set termencoding=utf-8
-set ff=dos ffs=dos,unix,mac
+set ff=unix ffs=unix,dos,mac
 " }}}
 
 " Backup{{{
