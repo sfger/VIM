@@ -28,6 +28,13 @@ function! MyDiff()
 endfunction
 " }}}
 
+let g:os="unix"
+if has("win32")
+	let g:os="win"
+elseif has('mac')
+	let g:os="mac"
+endif
+
 " set group{{{
 " top{{{
 call pathogen#infect()
@@ -226,7 +233,11 @@ map \dse :%s/[ \t]*$//g<CR>
 map \t2s :%s/\t/    /g<CR>
 map \s2t :%s/    /\t/g<CR>
 map \lcd :lcd %:p:h<CR>
-map <silent> \xpr :call system('explorer "'.expand('%:p:h').'"')<CR>
+if g:os=='win'
+	map <silent> \xpr :call system('explorer "'.expand('%:p:h').'"')<CR>
+elseif g:os=='mac'
+	map <silent> \xpr :call system('open "'.expand('%:p:h').'"')<CR>
+endif
 map <silent> <S-Down> :call system('cmd /c start')<CR>
 map <silent> \cmd <S-Down>
 " }}}
@@ -364,10 +375,14 @@ vnoremap ,arr "zygv"=Str2PHPArray(@z)<CR>Pgv
 " fn Dictionary{{{
 func! Dictionary(...)
 	let word = get(a:000,0)
-	:call system('ff http://www.iciba.com/'.word)
+	let ttt='ff'
+	if g:os=='mac'
+		let ttt='open'
+	endif
+	:call system(ttt.' http://www.iciba.com/'.word)
 endfunc
 com! -nargs=* Dic call Dictionary(<f-args>)
-map <silent> <A-f> :let tmp = expand('<cword>') <Bar> exec("Dic ".tmp)<CR>
+map ,f :let tmp = expand('<cword>') <Bar> exec("Dic ".tmp)<CR>
 " }}}
 
 " fn Camelize{{{
