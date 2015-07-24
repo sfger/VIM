@@ -39,6 +39,7 @@ endif
 " top{{{
 call pathogen#infect()
 filetype plugin on
+set noundofile
 set nocompatible
 set tags=./tags,tags
 " set tags=./tags,tags,E:/Projects/tags
