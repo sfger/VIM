@@ -387,8 +387,9 @@ map ,f :let tmp = expand('<cword>') <Bar> exec("Dic ".tmp)<CR>
 " }}}
 
 func! Myman()
-	let word = expand('<cword>')
-	:tab h word
+	let word = expand("<cword>")
+	echo word
+	exec "tab h ".word
 endfunc
 map K :call Myman()<CR>
 
