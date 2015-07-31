@@ -1,0 +1,36 @@
+ifdef endif
+include
+int long double float char pid_t register
+main argc argv
+stdio stdin stdout
+stdlib
+string
+unistd
+math atan
+ctype isalpha isalnum iscntrl
+typeinfo define fflush system
+if else for while return void break continue case switch
+struct tm stat
+time_t
+localtime strftime mktime ctime
+FILE fopen fclose feof freopen
+sqrt time rand
+printf scanf fprintf fscanf sscanf sprintf strtok
+fgets fputs 
+gets puts
+getopt
+strchr strncpy
+malloc realloc free
+sizeof _msize atoi
+memset
+
+LOBYTE HIBYTE socket bind listen accept send recv closesocket
+WSAStartup WSACleanup
+htons ntohl ntohs htons
+WORD WSADATA SOCKADDR_IN SOCKET
+
+iostream iomanip typeinfo
+using namespace std
+cout cin endl
+setw typeid
+template class Type
