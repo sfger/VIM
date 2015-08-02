@@ -28,12 +28,14 @@ function! MyDiff()
 endfunction
 " }}}
 
+"g:os{{{
 let g:os="unix"
 if has("win32")
 	let g:os="win"
 elseif has('mac')
 	let g:os="mac"
 endif
+"}}}
 
 " set group{{{
 " top{{{
@@ -495,10 +497,10 @@ if has("autocmd")
 endif
 " }}}
 
-let g:vimim_toggle='wubi'
-let g:vimim_wubi='jd'
-let g:vimim_mode = 'dynamic'
-let g:vimim_map='c-bslash'
+let g:vimim_toggle = 'wubi'
+let g:vimim_wubi   = 'jd'
+let g:vimim_mode   = 'dynamic'
+let g:vimim_map    = 'c-bslash'
 " C-x C-t
 set thesaurus=$HOME\vimfiles\keyword\list\en.list
 " set path=.,.\**,E:\ShellAlias\GccDir\MinGW\include
