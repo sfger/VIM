@@ -32,6 +32,7 @@ elementFromPoint
 selection createRange empty clear
 execCommand
 this length prototype arguments callee caller
+hasOwnProperty
 toString
 createTextRange moveStart moveEnd findText select
 write writeln hostname search href domain title rowIndex
