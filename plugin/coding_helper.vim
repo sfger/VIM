@@ -108,7 +108,13 @@ com -nargs=1 L call LoadModel(<q-args>)
 func! LoadModel(...)
 	let ft = get(a:000,0)
 	let lines = line(".") - 1
-	let $VIM_TEMP = $HOME.'\vimfiles\keyword\load'
+	let ds = '/'
+	let dir = '.vim'
+	if g:os == 'win'
+		let ds = '\'
+		let dir = 'vimfiles'
+	endif
+		let $VIM_TEMP = $HOME.ds.dir.ds.'keyword'.ds.'load'
 	let items = {'xhtml':	'default.html',
 				\'html':	'html5.html',
 				\'c':		'init.c',
@@ -120,13 +126,13 @@ func! LoadModel(...)
 				\}
 	if has_key(items, ft)
 		let file = items[ft]
-	elseif getftype($VIM_TEMP . '\' . ft) == 'file'
+	elseif getftype($VIM_TEMP . ds . ft) == 'file'
 		let file = ft
 	else
 		return ''
 	endif
 
-	exec(':'.lines.'r $VIM_TEMP\' . file)
+	exec(':'.lines.'r $VIM_TEMP'.ds.file)
 	"delete the empty line when loading file the cursor at
 	"exec "normal k"
 	"if getline( line(".") )=='' && lines==1
