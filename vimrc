@@ -241,7 +241,8 @@ if g:os=='win'
 elseif g:os=='mac'
 	map <silent> \xpr :call system('open "'.expand('%:p:h').'"')<CR>
 endif
-map <silent> <S-Down> :call system('cmd /c start')<CR>
+" map <silent> <S-Down> :call system('cmd /c start')<CR>
+map <silent> <S-Down> :call system('conemu '.expand('%:p:h'))<CR>
 map <silent> \cmd <S-Down>
 " }}}
 " nmap <F4> :echo synIDattr(synID(line("."), col("."), 1), "name")<CR>
