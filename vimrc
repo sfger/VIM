@@ -498,6 +498,7 @@ if has("autocmd")
 endif
 " }}}
 
+let g:jsx_ext_required = 0
 let g:rust_recommended_style = 0
 let g:vimim_toggle = 'wubi'
 let g:vimim_wubi   = 'jd'
