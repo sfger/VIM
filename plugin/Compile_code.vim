@@ -97,7 +97,8 @@ func! Run()
 		silent! exe '%!php ' . bin_file . '.php'
 	elseif 'java'==l:ft
 		silent! exe '%!java ' . bin_file
-	elseif 'javascript'==l:ft
+	" elseif 'javascript'==l:ft
+	elseif -1!=index(split(l:ft, '\.'), 'javascript')
 		silent! exe '%!node ' . bin_file . '.js'
 	elseif 'less' == l:ft
 		silent! exe '%!lessc -x --no-color '.bin_file.'.less '.bin_file.'.css'
