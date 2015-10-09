@@ -206,7 +206,7 @@ set cedit=<C-x>
 " Tlist{{{
 map \tt :TlistToggle<CR>
 map <S-Up> :TlistToggle<CR>
-let Tlist_Ctags_Cmd = 'E:\ShellAlias\ctags.exe'
+" let Tlist_Ctags_Cmd = 'D:d\ShellAlias\ctags.exe'
 let Tlist_Auto_Open=0
 " let Tlist_Compact_Format = 1
 " let Tlist_Enable_Fold_Column = 0
