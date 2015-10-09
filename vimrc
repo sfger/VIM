@@ -241,7 +241,8 @@ if g:os=='win'
 elseif g:os=='mac'
 	map <silent> \xpr :call system('open "'.expand('%:p:h').'"')<CR>
 endif
-map <silent> <S-Down> :call system('cmd /c start')<CR>
+" map <silent> <S-Down> :call system('cmd /c start')<CR>
+map <silent> <S-Down> :call system('conemu '.expand('%:p:h'))<CR>
 map <silent> \cmd <S-Down>
 " }}}
 " nmap <F4> :echo synIDattr(synID(line("."), col("."), 1), "name")<CR>
@@ -497,6 +498,8 @@ if has("autocmd")
 endif
 " }}}
 
+let g:jsx_ext_required = 0
+let g:rust_recommended_style = 0
 let g:vimim_toggle = 'wubi'
 let g:vimim_wubi   = 'jd'
 let g:vimim_mode   = 'dynamic'
