@@ -31,3 +31,6 @@
 [submodule "bundle/vim-cssfmt"]
 	path = bundle/vim-cssfmt
 	url = https://github.com/sfger/vim-cssfmt.git
+[submodule "bundle/bufexplorer"]
+	path = bundle/bufexplorer
+	url = https://github.com/jlanzarotta/bufexplorer.git
