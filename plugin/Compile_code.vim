@@ -103,7 +103,7 @@ func! Run()
 	elseif 'less' == l:ft
 		silent! exe '%!lessc -x --no-color '.bin_file.'.less '.bin_file.'.css'
 	elseif 'scss' == l:ft
-		silent! exe '%!scss -t compact '.bin_file.'.scss'
+		silent! exe '%!node-sass --output-style compact '.bin_file.'.scss'
 	endif
 
     silent! exe src_winnr . 'wincmd w'
