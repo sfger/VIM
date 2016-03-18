@@ -76,6 +76,8 @@ setTimeout clearTimeout
 setInterval clearInterval
 replace match split
 
+Symbol iterator
+
 canvas getContext 2d
 moveTo lineTo
 lineCap butt round square
