@@ -6,7 +6,7 @@ func! Compile()
 		" let makeprg = 'set makeprg=g++\ -Wall\ -o\ ' . expand("%:r") . '\ %\ -Wl,--enable-auto-import'
 		let makeprg = 'set makeprg=g++\ -Wall\ -o\ a\ %\ -Wl,--enable-auto-import'
 	elseif 'java' == &ft
-		let makeprg = 'set makeprg=javac\ ' . expand("%")
+		let makeprg = 'set makeprg=javac -encoding UTF-8\ ' . expand("%")
 		set shellpipe=>\ %s\ 2>&1
 		set errorformat=%A%f:%l:\ %m,%-Z%p^,%-C%.%#
 		"set makeprg=jikes\ +E\ %
