@@ -18,6 +18,8 @@ onmousewheel DOMMouseScroll
 activeElement oncontextmenu
 addEventListener removeEventListener attachEvent detachEvent function undefined var alert return
 
+requestAnimationFrame cancelAnimationFrame
+
 className
 documentElement ownerDocument
 scrollIntoView 
