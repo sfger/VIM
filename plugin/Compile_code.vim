@@ -6,7 +6,7 @@ func! Compile()
 		" let makeprg = 'set makeprg=g++\ -Wall\ -o\ ' . expand("%:r") . '\ %\ -Wl,--enable-auto-import'
 		let makeprg = 'set makeprg=g++\ -Wall\ -o\ a\ %\ -Wl,--enable-auto-import'
 	elseif 'java' == &ft
-		let makeprg = 'set makeprg=javac -encoding UTF-8\ ' . expand("%")
+		let makeprg = 'set makeprg=javac\ -encoding\ utf8\ ' . expand("%")
 		set shellpipe=>\ %s\ 2>&1
 		set errorformat=%A%f:%l:\ %m,%-Z%p^,%-C%.%#
 		"set makeprg=jikes\ +E\ %
@@ -14,6 +14,8 @@ func! Compile()
 	elseif 'php' == &ft
 		let makeprg = 'set makeprg=php\ -l\ -n\ -d\ html_errors=off\ ' . expand("%")
 		setlocal errorformat=%m\ in\ %f\ on\ line\ %l
+	elseif 'typescript' == &ft
+		" let makeprg = 'set makeprg=tsc ' . expand("%")
 	elseif 'javascript' == &ft
 		let makeprg = 'set makeprg=jsl.bat\ process\ ' . expand("%")
 	"elseif 'less' == &ft
@@ -93,6 +95,8 @@ func! Run()
 	if 'c'==l:ft || 'cpp'==l:ft
 		" silent! exe '%!' . bin_file
 		silent! exe '%!a'
+	elseif 'typescript'==l:ft
+		silent! exe '%!node '. bin_file . '.js'
 	elseif 'php'==l:ft
 		silent! exe '%!php ' . bin_file . '.php'
 	elseif 'java'==l:ft
@@ -109,7 +113,7 @@ func! Run()
     silent! exe src_winnr . 'wincmd w'
 endfunc
 
-autocmd FileType c,cpp,java,php,javascript nnoremap <buffer><silent> ,c :call Compile()<cr>
-autocmd FileType c,cpp,java,php,javascript,less,scss nnoremap <buffer><silent> ,r :call Run()<cr>
-autocmd FileType c,cpp,java,php,tmp,qf,javascript,less,scss nnoremap <buffer><silent> ,h :call HideOutput()<cr>
+autocmd FileType c,cpp,java,php,javascript,typescript nnoremap <buffer><silent> ,c :call Compile()<cr>
+autocmd FileType c,cpp,java,php,javascript,less,scss,typescript nnoremap <buffer><silent> ,r :call Run()<cr>
+autocmd FileType c,cpp,java,php,tmp,qf,javascript,less,scss,typescript nnoremap <buffer><silent> ,h :call HideOutput()<cr>
 autocmd FileType * set autoindent smartindent autochdir
