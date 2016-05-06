@@ -17,20 +17,9 @@ func! Compile()
 	elseif 'typescript' == &ft
 		" let makeprg = 'set makeprg=tsc ' . expand("%")
 	elseif 'javascript' == &ft
-		let makeprg = 'set makeprg=jsl.bat\ process\ ' . expand("%")
-	"elseif 'less' == &ft
-		"let makeprg = 'set makeprg=lessc\ -x\ --no-color\ '.expand('%').' '.expand('%:r').'.css'
-		"let l:errs = Cmd_Shell('lessc '.expand('%').' '.expand('%:r').'.css')
-		"if (!empty(l:errs))
-		  " replace the escape string(\%oxxx match the octal character).  e.g: \033[33m
-		  "let l:errs = substitute(l:errs, "\\%o033[\\d\\+m", "", "g") 
-		  " replace the blank lines
-		  "let l:errs = substitute(l:errs, "^$", "", "g")
-		  " we jsut need the error message
-		  "let l:errs = split(l:errs, "\\n")[0]
-		  "echo l:errs
-		"endif
-		"return ''
+		" let makeprg = 'set makeprg=jsl.bat\ process\ ' . expand("%")
+		let makeprg = 'set makeprg=eslint\ --no-color\ ' . expand("%")
+		setlocal errorformat=%+P%f,%*\\s%l:%v%*\\s%t%*\\S%*\\s%m
 	else
 	endif
 
