@@ -19,7 +19,7 @@ func! Compile()
 	elseif 'javascript' == &ft
 		" let makeprg = 'set makeprg=jsl.bat\ process\ ' . expand("%")
 		let makeprg = 'set makeprg=eslint\ --no-color\ ' . expand("%")
-		setlocal errorformat=%+P%f,%*\\s%l:%v%*\\s%t%*\\S%*\\s%m
+		setlocal errorformat=%+P%f,%*\\s%l:%c%*\\s%t%*\\S%*\\s%m
 	else
 	endif
 

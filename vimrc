@@ -514,6 +514,16 @@ set thesaurus=$HOME\vimfiles\keyword\list\en.list
 set path=.,E:\ShellAlias\GccDir\MinGW\include
 
 nmap <silent> \host :tabnew C:\Windows\System32\drivers\etc\hosts<CR>
+
+" let g:syntastic_python_python_exec = 'C:\Python35-32'
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+
 " function! MyBalloonExpr()
 " 	return 'Cursor is at line ' . v:beval_lnum .
 " 				\', column ' . v:beval_col .
