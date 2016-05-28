@@ -138,14 +138,14 @@ if has("win32")
 endif
 map <C-t> :tabnew<CR>
 
-map <C-M-Down> <C-w>-
-map <C-M-Up> <C-w>+
-map <C-M-Left> <C-w><
-map <C-M-Right> <C-w>>
-map <silent> <C-S-Left> :let tmp = tabpagenr()-2 <Bar> if -1==tmp <Bar> tabm <Bar> else <Bar> exec("tabm ".tmp) <Bar> endif<CR>
+map <C-M-Down>    <C-w>-
+map <C-M-Up>      <C-w>+
+map <C-M-Left>    <C-w><
+map <C-M-Right>   <C-w>>
+map <silent> <C-S-Left>  :let tmp = tabpagenr()-2 <Bar> if -1==tmp <Bar> tabm <Bar> else <Bar> exec("tabm ".tmp) <Bar> endif<CR>
 map <silent> <C-S-Right> :let tmp = tabpagenr() <Bar> if tmp==tabpagenr("$") <Bar> tabm 0 <Bar> else <Bar> exec("tabm ".tmp) <Bar> endif<CR>
 
-nnoremap <S-Left> :tabp<CR>
+nnoremap <S-Left>  :tabp<CR>
 nnoremap <S-Right> :tabn<CR>
 for a in range(1,9)
     exe 'map <A-' . a . '> ' . a . 'gt'
