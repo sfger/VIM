@@ -512,6 +512,7 @@ let g:vimim_map    = 'c-bslash'
 set thesaurus=$HOME\vimfiles\keyword\list\en.list
 " set path=.,.\**,E:\ShellAlias\GccDir\MinGW\include
 set path=.,E:\ShellAlias\GccDir\MinGW\include
+set fdm=marker
 
 nmap <silent> \host :tabnew C:\Windows\System32\drivers\etc\hosts<CR>
 

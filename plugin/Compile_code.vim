@@ -23,24 +23,24 @@ func! Compile()
 	else
 	endif
 
-    silent! exe makeprg
-    silent! exe ':update'
+	silent! exe makeprg
+	silent! exe ':update'
 	silent! exe ':make'
 
-    call HideOutput()
-    call Quickfix()
+	call HideOutput()
+	call Quickfix()
 endfunc
 
 func! Quickfix()
-    let list = getqflist()
-    let bugs = len(list)
+	let list = getqflist()
+	let bugs = len(list)
 
-    if bugs == 0
-        echo 'Compile success!'
-        " Hide the quickfix window
-        silent! exe 'cw'
-        "call Run()
-    else
+	if bugs == 0
+		echo 'Compile success!'
+		" Hide the quickfix window
+		silent! exe 'cw'
+		"call Run()
+	else
 		if('php' == &ft && 'No syntax errors detected in '.expand("%") == list[0].text)
 			echo 'Syntax check success!'
 			silent! exe 'cw'
@@ -49,31 +49,31 @@ func! Quickfix()
 			" Show the quickfix window
 			silent! exe 'cw ' . string((bugs + 1) > 9 ? 9 : (bugs + 1))
 		endif
-    endif
+	endif
 endfunc
 
 func! HideOutput()
-    let output_file = string(getpid()) . '.output'
-    let bufnumlist  = tabpagebuflist()
+	let output_file = string(getpid()) . '.output'
+	let bufnumlist  = tabpagebuflist()
 
 	:ccl
-    for bufnum in bufnumlist
-        let file = bufname(bufnum)
-        if file =~# output_file
-            silent! exe string(bufnum) . ' bwipe!' 
-            break
-        endif
-    endfor
+	for bufnum in bufnumlist
+		let file = bufname(bufnum)
+		if file =~# output_file
+			silent! exe string(bufnum) . ' bwipe!' 
+			break
+		endif
+	endfor
 
-    silent! exe ':setlocal laststatus=2'
+	silent! exe ':setlocal laststatus=2'
 endfunc
 
 func! Run()
-    call HideOutput()
-    
+	call HideOutput()
+
 	let l:ft = &ft
 	let l:ff = &ff
-    let src_winnr = winnr()
+	let src_winnr = winnr()
 	let bin_file = expand("%:r")
 
 	" if l:ft=='c' && executable(expand("%:p:r") . '.exe') != 1 | echo bin_file . '.exe does not exist!' | return '' | endif
@@ -90,7 +90,7 @@ func! Run()
 		silent! exe '%!php ' . bin_file . '.php'
 	elseif 'java'==l:ft
 		silent! exe '%!java ' . bin_file
-	" elseif 'javascript'==l:ft
+		" elseif 'javascript'==l:ft
 	elseif -1!=index(split(l:ft, '\.'), 'javascript')
 		silent! exe '%!node ' . bin_file . '.js'
 	elseif 'less' == l:ft
@@ -99,7 +99,7 @@ func! Run()
 		silent! exe '%!node-sass --output-style compact '.bin_file.'.scss'
 	endif
 
-    silent! exe src_winnr . 'wincmd w'
+	silent! exe src_winnr . 'wincmd w'
 endfunc
 
 autocmd FileType c,cpp,java,php,javascript,typescript nnoremap <buffer><silent> ,c :call Compile()<cr>
