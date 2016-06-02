@@ -61,7 +61,8 @@ RegExp test exec lastIndex
 contentDocument windowDocument ActiveXObject Microsoft XMLHTTP XMLHttpRequest
 setRequestHeader getResponseHeader getAllResponseHeaders responseText
 open send onreadystatechange status statusText DOMContentLoaded
-preventDefault stopPropagation returnValue cancelBubble
+preventDefault stopPropagation stopImmediatePropagation returnValue cancelBubble
+createEvent initEvent dispatchEvent
 
 new Image
 Date parse getFullYear getMonth getDate getHours getMinutes getSeconds getMilliseconds
