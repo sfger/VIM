@@ -1,17 +1,27 @@
+Number String Boolean undefined Array RegExp Object Symbol
+iterator typeof instanceof constructor __proto__ isPrototypeOf
+freeze isFrozen seal isSeal
+preventExtensions
+
 console log error
 debugger time timeEnd
-CollectGarbage collect
 
 script javascript document referrer window location body navigator userAgent
 
-hasFocus activeElement
+HTMLElement Element Node
 
-Date setFullYear setMonth setDate setHours setMinutes setSeconds setMilliseconds setTime
+defineProperty defineProperties getOwnPropertyDescriptor
+configurable enumerable value writable
+
+dataset
+
+setFullYear setMonth setDate setHours setMinutes setSeconds setMilliseconds setTime
 
 event
 wheelDelta detail
 which button
 keyCode altKey ctrlKey shiftKey
+hasFocus activeElement
 
 onmousewheel DOMMouseScroll
 
@@ -39,8 +49,6 @@ toString
 createTextRange moveStart moveEnd findText select
 write writeln hostname search href domain title rowIndex
 innerHTML outerHTML innerText textContent outerText cssText
-typeof instanceof constructor __proto__ 
-RegExp Array Object
 getElementsByName getElementById getElementsByTagName nodeName nodeValue nodeType
 decodeURIComponent encodeURIComponent encodeURI decodeURI escape unescape
 parentNode firstChild lastChild previousSibling nextSibling children
@@ -76,9 +84,9 @@ onsubmit onclick onload onerror
 click
 setTimeout clearTimeout
 setInterval clearInterval
-replace match split
+replace match split search
 
-Symbol iterator
+CollectGarbage collect
 
 canvas getContext 2d
 moveTo lineTo
