@@ -80,7 +80,7 @@ currentStyle getComputedStyle
 
 insertAdjacentHTML beforeBegin afterBegin beforeEnd afterEnd
 insertBefore createElement createTextNode replaceChild appendChild removeChild cloneNode
-createAttribute removeAttribute setAttribute getAttribute createDocumentFragment
+createAttribute removeAttribute setAttribute getAttribute hasAttribute createDocumentFragment
 onsubmit onclick onload onerror
 click
 setTimeout clearTimeout
