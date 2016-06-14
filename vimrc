@@ -516,6 +516,8 @@ set fdm=marker
 
 nmap <silent> \host :tabnew C:\Windows\System32\drivers\etc\hosts<CR>
 
+" let g:NERDTreeDirArrowExpandable = '▸'
+" let g:NERDTreeDirArrowCollapsible = '▾'
 " let g:syntastic_python_python_exec = 'C:\Python35-32'
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
