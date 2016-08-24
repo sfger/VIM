@@ -515,6 +515,8 @@ set path=.,E:\ShellAlias\GccDir\MinGW\include
 set fdm=marker
 
 nmap <silent> \host :tabnew C:\Windows\System32\drivers\etc\hosts<CR>
+let g:JavaComplete_MavenRepositoryDisable = 1
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
 
 " let g:NERDTreeDirArrowExpandable = '▸'
 " let g:NERDTreeDirArrowCollapsible = '▾'
