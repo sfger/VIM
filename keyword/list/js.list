@@ -118,3 +118,9 @@ setCustomValidity checkValidity
 
 jQuery parent parents filter find after before text show hide attr html toggleClass removeClass addClass
 append appendTo
+
+React ReactDOM
+createClass displayName render
+state setState getInitialState
+onClick
+dangerouslySetInnerHTML
