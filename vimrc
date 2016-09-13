@@ -4,27 +4,32 @@ source $VIMRUNTIME/mswin.vim
 behave mswin
 set diffexpr=MyDiff()
 function! MyDiff()
-    let opt = '-a --binary '
-    if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
-    if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
-    let arg1 = v:fname_in
-    if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
-    let arg2 = v:fname_new
-    if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
-    let arg3 = v:fname_out
-    if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
-    let eq = ''
-    if $VIMRUNTIME =~ ' '
-        if &sh =~ '\<cmd'
-            let cmd = '"' . $VIMRUNTIME . '\diff"'
-            let eq = '""'
-        else
-            let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\dif"'
-        endif
-    else
-        let cmd = $VIMRUNTIME . '\diff'
-    endif
-    silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
+	let opt = '-a --binary '
+	if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
+	if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
+	let arg1 = v:fname_in
+	if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
+	let arg2 = v:fname_new
+	if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
+	let arg3 = v:fname_out
+	if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
+	if $VIMRUNTIME =~ ' '
+		if &sh =~ '\<cmd'
+			if empty(&shellxquote)
+				let l:shxq_sav = ''
+				set shellxquote&
+			endif
+			let cmd = '"' . $VIMRUNTIME . '\diff"'
+		else
+			let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
+		endif
+	else
+		let cmd = $VIMRUNTIME . '\diff'
+	endif
+	silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3
+	if exists('l:shxq_sav')
+		let &shellxquote=l:shxq_sav
+	endif
 endfunction
 " }}}
 
@@ -41,6 +46,7 @@ endif
 " top{{{
 call pathogen#infect()
 filetype plugin on
+set cm=blowfish2
 set noundofile
 set nocompatible
 set tags=./tags,tags
@@ -143,7 +149,7 @@ map <C-M-Up>      <C-w>+
 map <C-M-Left>    <C-w><
 map <C-M-Right>   <C-w>>
 map <silent> <C-S-Left>  :let tmp = tabpagenr()-2 <Bar> if -1==tmp <Bar> tabm <Bar> else <Bar> exec("tabm ".tmp) <Bar> endif<CR>
-map <silent> <C-S-Right> :let tmp = tabpagenr() <Bar> if tmp==tabpagenr("$") <Bar> tabm 0 <Bar> else <Bar> exec("tabm ".tmp) <Bar> endif<CR>
+map <silent> <C-S-Right> :let tmp = tabpagenr() <Bar> if tmp==tabpagenr("$") <Bar> tabm 0 <Bar> else <Bar> exec("tabm ".(tmp+1)) <Bar> endif<CR>
 
 nnoremap <S-Left>  :tabp<CR>
 nnoremap <S-Right> :tabn<CR>
