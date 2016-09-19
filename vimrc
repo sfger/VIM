@@ -507,13 +507,14 @@ endif
 let g:typescript_compiler_options = '-sourcemap'
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
+autocmd BufEnter *.conf         set ft=conf
 
 let g:jsx_ext_required = 1
 let g:rust_recommended_style = 0
-let g:vimim_toggle = 'wubi'
-let g:vimim_wubi   = 'jd'
-let g:vimim_mode   = 'dynamic'
-let g:vimim_map    = 'c-bslash'
+" let g:vimim_toggle = 'wubi'
+" let g:vimim_wubi   = 'jd'
+" let g:vimim_mode   = 'dynamic'
+" let g:vimim_map    = 'c-bslash'
 " C-x C-t
 set thesaurus=$HOME\vimfiles\keyword\list\en.list
 " set path=.,.\**,E:\ShellAlias\GccDir\MinGW\include
