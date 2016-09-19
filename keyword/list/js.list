@@ -8,6 +8,8 @@ debugger time timeEnd
 
 script javascript document referrer window location body navigator userAgent
 
+history pushState replaceState onpopState
+
 HTMLElement Element Node
 
 defineProperty defineProperties getOwnPropertyDescriptor
