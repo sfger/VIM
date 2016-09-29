@@ -508,6 +508,7 @@ let g:typescript_compiler_options = '-sourcemap'
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
 autocmd BufEnter *.conf         set ft=conf
+autocmd BufEnter *.tsx          set ft=typescript
 
 let g:jsx_ext_required = 1
 let g:rust_recommended_style = 0
