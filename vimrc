@@ -119,6 +119,7 @@ set whichwrap=b,s,<,>,[,]
 set ambiwidth=double
 set noswapfile
 set diffopt=context:5
+set scrolloff=0
 " }}}
 
 " Toggle show menu{{{
