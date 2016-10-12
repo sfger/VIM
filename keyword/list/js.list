@@ -65,6 +65,7 @@ setRequestHeader getResponseHeader getAllResponseHeaders responseText
 open send onreadystatechange status statusText DOMContentLoaded
 preventDefault stopPropagation stopImmediatePropagation returnValue cancelBubble
 createEvent initEvent dispatchEvent
+CustomEvent bubbles cancelable
 
 new Image
 Date parse getFullYear getMonth getDate getHours getMinutes getSeconds getMilliseconds
