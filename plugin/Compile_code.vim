@@ -15,7 +15,8 @@ func! Compile()
 		let makeprg = 'set makeprg=php\ -l\ -n\ -d\ html_errors=off\ ' . expand("%")
 		setlocal errorformat=%m\ in\ %f\ on\ line\ %l
 	elseif 'typescript' == &ft
-		" let makeprg = 'set makeprg=tsc ' . expand("%")
+		let makeprg = 'set makeprg=tslint\ ' . expand("%")
+		setlocal errorformat=%-P,%f[%l\,\ %c]:\ %*\\S%*\\s%m
 	elseif 'javascript' == &ft
 		" let makeprg = 'set makeprg=jsl.bat\ process\ ' . expand("%")
 		let makeprg = 'set makeprg=eslint\ --no-color\ ' . expand("%")

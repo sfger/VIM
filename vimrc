@@ -523,6 +523,8 @@ set thesaurus=$HOME\vimfiles\keyword\list\en.list
 set path=.,E:\ShellAlias\GccDir\MinGW\include
 set fdm=marker
 
+" let g:syntastic_javascript_checkers = ['eslint']
+" execute pathogen#infect()
 nmap <silent> \host :tabnew C:\Windows\System32\drivers\etc\hosts<CR>
 let g:JavaComplete_MavenRepositoryDisable = 1
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
