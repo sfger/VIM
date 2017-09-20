@@ -510,6 +510,9 @@ autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
 autocmd BufEnter *.conf         set ft=conf
 autocmd BufEnter *.tsx          set ft=typescript
+autocmd BufEnter *.ejs          set ft=ejs.html
+autocmd BufEnter *.tpl          set ft=ejs.html
+autocmd BufEnter *.vue          set ft=javascript.css.html.vue
 
 let g:jsx_ext_required = 1
 let g:rust_recommended_style = 0
@@ -521,7 +524,7 @@ let g:rust_recommended_style = 0
 set thesaurus=$HOME\vimfiles\keyword\list\en.list
 " set path=.,.\**,E:\ShellAlias\GccDir\MinGW\include
 set path=.,E:\ShellAlias\GccDir\MinGW\include
-set fdm=marker
+set fdm=syntax
 
 " let g:syntastic_javascript_checkers = ['eslint']
 " execute pathogen#infect()
