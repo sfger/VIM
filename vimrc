@@ -529,6 +529,7 @@ set fdm=syntax
 " let g:syntastic_javascript_checkers = ['eslint']
 " execute pathogen#infect()
 nmap <silent> \host :tabnew C:\Windows\System32\drivers\etc\hosts<CR>
+nmap \fd :NERDTreeFind<CR>
 let g:JavaComplete_MavenRepositoryDisable = 1
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 " execute pathogen#infect()
