@@ -47,8 +47,7 @@ endif
 call pathogen#infect()
 filetype plugin on
 set cm=blowfish2
-set noundofile
-set nocompatible
+set noundofile nocompatible
 set tags=./tags,tags
 " set tags=./tags,tags,E:/Projects/tags
 " }}}
@@ -516,42 +515,15 @@ autocmd BufEnter *.vue          set ft=javascript.css.html.vue
 
 let g:jsx_ext_required = 1
 let g:rust_recommended_style = 0
-" let g:vimim_toggle = 'wubi'
-" let g:vimim_wubi   = 'jd'
-" let g:vimim_mode   = 'dynamic'
-" let g:vimim_map    = 'c-bslash'
 " C-x C-t
 set thesaurus=$HOME\vimfiles\keyword\list\en.list
 " set path=.,.\**,E:\ShellAlias\GccDir\MinGW\include
 set path=.,E:\ShellAlias\GccDir\MinGW\include
 set fdm=syntax
-
-" let g:syntastic_javascript_checkers = ['eslint']
-" execute pathogen#infect()
 nmap <silent> \host :tabnew C:\Windows\System32\drivers\etc\hosts<CR>
 nmap \fd :NERDTreeFind<CR>
 let g:JavaComplete_MavenRepositoryDisable = 1
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
-" execute pathogen#infect()
-" let g:syntastic_javascript_checkers = ['eslint']
-
-" let g:NERDTreeDirArrowExpandable = '▸'
-" let g:NERDTreeDirArrowCollapsible = '▾'
-" let g:syntastic_python_python_exec = 'C:\Python35-32'
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
-
-" function! MyBalloonExpr()
-" 	return 'Cursor is at line ' . v:beval_lnum .
-" 				\', column ' . v:beval_col .
-" 				\ ' of file ' .  bufname(v:beval_bufnr) .
-" 				\ ' on word "' . v:beval_text . '"'
-" endfunction
-" set bexpr=MyBalloonExpr()
+autocmd BufEnter *.css,*.scss,*.less set iskeyword=@,48-57,-,192-255
 " set ballooneval
 " vim: fdm=marker
