@@ -513,6 +513,12 @@ autocmd BufEnter *.ejs          set ft=ejs.html
 autocmd BufEnter *.tpl          set ft=ejs.html
 autocmd BufEnter *.vue          set ft=javascript.css.html.vue
 
+syntax enable                " 打开语法高亮
+syntax on                    " 开启文件类型侦测
+filetype indent on           " 针对不同的文件类型采用不同的缩进格式
+filetype plugin on           " 针对不同的文件类型加载对应的插件
+filetype plugin indent on    " 启用自动补全
+
 let g:jsx_ext_required = 1
 let g:rust_recommended_style = 0
 " C-x C-t
