@@ -23,7 +23,8 @@ settype md5_file
 bindec decbin dechex decoct hexdec octdec base_convert
 
 strtoupper strtolower strlen chr str_repeat split strrev
-str_split ucwords json_decode json_encode urldecode urlencode
+str_split ucwords  urldecode urlencode
+json_decode json_encode JSON_UNESCAPED_UNICODE
 mb_internal_encoding mb_strlen mb_substr bin2hex hexdec decbin decoct dechex ord
 in_array array_key_exists array_change_key_case array_intersect
 gettype preg_match preg_replace htmlspecialchars htmlspecialchars_decode similar_text
@@ -54,7 +55,3 @@ getcwd chdir realpath
 getopt
 
 select update insert from where trunc to_date to_char order sysdate
-
-rq_dt getAll getRow getOne Execute RedirectResult exec post SelectLimit initDb
-errormsg db2Obj dbObj close logObj
-BeginTrans CommitTrans RollbackTrans
