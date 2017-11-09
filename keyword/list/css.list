@@ -9,6 +9,7 @@ position relative absolute sticky fixed z-index
 font font-size font-weight font-style font-family line-height
 color transparent black white purple red green blue
 background background-color background-image background-position background-size background-repeat
+background-attachment background-clip background-origin
 linear-gradient repeating-linear-gradient repeating-radial-gradient
 text-align vertical-align word-break break-all word-wrap break-word
 overflow overflow-x overflow-y hidden visible auto
@@ -30,7 +31,11 @@ rotate rotateX rotateY rotate3d
 scale scaleX scaleY scale3d
 skew skewX skewY
 perspective
+transform-style flat preserve-3d
+perspective-origin
+backface-visibility
 
 animation
 animation-name animation-duration animation-timing-function animation-delay animation-iteration-counta animation-direction
+animation-play-state animation-fill-mode keyframes
 infinite
