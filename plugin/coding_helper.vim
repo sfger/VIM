@@ -1,14 +1,10 @@
 autocmd BufEnter *				let @p = expand('%:p') ? expand('%:p') : getcwd()
 autocmd BufNewFile *.html       :L html
-autocmd FileType java           set dictionary+=$home\vimfiles\keyword\list\java.list
-autocmd FileType php            set dictionary+=$home\vimfiles\keyword\list\php.list
-autocmd FileType javascript     set dictionary+=$home\vimfiles\keyword\list\js.list
-autocmd FileType xhtml          set dictionary+=$home\vimfiles\keyword\list\js.list
-autocmd FileType html           set dictionary+=$home\vimfiles\keyword\list\js.list
-autocmd FileType htm            set dictionary+=$home\vimfiles\keyword\list\js.list
-autocmd FileType c              set dictionary+=$home\vimfiles\keyword\list\cpp.list
-autocmd FileType C              set dictionary+=$home\vimfiles\keyword\list\cpp.list
-autocmd FileType cpp            set dictionary+=$home\vimfiles\keyword\list\cpp.list
+autocmd FileType java           setl dictionary+=$home\vimfiles\keyword\list\java.list
+autocmd FileType php            setl dictionary+=$home\vimfiles\keyword\list\php.list
+autocmd FileType c,C,cpp        setl dictionary+=$home\vimfiles\keyword\list\cpp.list
+autocmd FileType css,lett,scss,sass        setl dictionary+=$home\vimfiles\keyword\list\css.list
+autocmd FileType javascript,xhtml,html,htm setl dictionary+=$home\vimfiles\keyword\list\js.list
 imap <C-CR> <C-x><C-k>
 
 map \at :call AppendTime()<CR>
@@ -79,15 +75,15 @@ func EchoString(...)
             let value = get(args,3)
             if value == ''
                 let value = key
-                exec "normal o<?php foreach($".get(args,1)." as $".value."){ ?>\n<?php } ?>\<Esc>kww"
+                exec "normal o<?php foreach(".get(args,1)." as ".value."){ ?>\n<?php } ?>\<Esc>kww"
             else
-                exec "normal o<?php foreach($".get(args,1)." as $".key."=>$".value."){ ?>\n<?php } ?>\<Esc>kww"
+                exec "normal o<?php foreach(".get(args,1)." as ".key."=>".value."){ ?>\n<?php } ?>\<Esc>kww"
             endif
         endif
     elseif sel == "pshow"
-        exec "normal oprint_r($".get(args,1).");\ndie;\<Esc>"
+        exec "normal oprint_r(".get(args,1).");\ndie;\<Esc>"
     elseif sel == "pdump"
-        exec "normal ovar_dump($".get(args,1).");\ndie;\<Esc>"
+        exec "normal ovar_dump(".get(args,1).");\ndie;\<Esc>"
     elseif sel == "pclass"
         if get(args,2) == ''
             let base = ''

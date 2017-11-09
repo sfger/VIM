@@ -237,6 +237,7 @@ map <C-Right> "+>gv
 vn <C-c> "+ygv
 " o||O for going to the other end of selections text 
 map \src :source $home\vimfiles\vimrc<CR>
+map \vim :tabnew $home\vimfiles\vimrc<CR>
 map \dsl :g/^[ \t]*$/d<CR>
 map \dse :%s/[ \t]*$//g<CR>
 map \t2s :%s/\t/    /g<CR>
@@ -530,6 +531,6 @@ nmap <silent> \host :tabnew C:\Windows\System32\drivers\etc\hosts<CR>
 nmap \fd :NERDTreeFind<CR>
 let g:JavaComplete_MavenRepositoryDisable = 1
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
-autocmd BufEnter *.css,*.scss,*.less set iskeyword=@,48-57,-,192-255
+autocmd BufEnter * set iskeyword=@,48-57,_,$,-,192-255
 " set ballooneval
 " vim: fdm=marker

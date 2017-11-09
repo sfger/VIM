@@ -1,0 +1,36 @@
+display inline-block block inline table table-cell
+border border-left border-right border-top border-bottom border-radius box-shadow
+box-sizing border-box content-box
+outline outline-offset outline-radius
+-webkit-overflow-scrolling touch
+Microsoft YaHei
+table-layout
+position relative absolute sticky fixed z-index
+font font-size font-weight font-style font-family line-height
+color transparent black white purple red green blue
+background background-color background-image background-position background-size background-repeat
+linear-gradient repeating-linear-gradient repeating-radial-gradient
+text-align vertical-align word-break break-all word-wrap break-word
+overflow overflow-x overflow-y hidden visible auto
+text-overflow ellipsis white-space nowrap wrap
+opacity filter content
+width height max-width max-height
+margin margin-left margin-right margin-top margin-bottom
+padding padding-left padding-right padding-top padding-bottom
+
+flex inline-flex flex-direction flex-wrap flex-flow order
+flex-grow flex-shrink flex-basis
+justify-content align-content align-items align-self
+
+transform
+matrix matrix3d
+translate translateX translateY translate3d
+translateX translateY translateZ translate3d
+rotate rotateX rotateY rotate3d
+scale scaleX scaleY scale3d
+skew skewX skewY
+perspective
+
+animation
+animation-name animation-duration animation-timing-function animation-delay animation-iteration-counta animation-direction
+infinite

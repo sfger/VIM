@@ -29,11 +29,11 @@ map <C-S-CR> :call CodeComplete()<CR>
 function! CodeComplete()
     let l:opts = expand('<cword>')
     if 'show' == l:opts
-        exec "normal bcw<?=$?>\<Esc>h"
+        exec "normal bcw<?=?>\<Esc>h"
     elseif 'if' == l:opts
-        exec "normal bcw<?php if( $ ){ ?>\n<?php } ?>\<Esc>bbb%hh"
+        exec "normal bcw<?php if(  ){ ?>\n<?php } ?>\<Esc>bbb%hh"
     elseif 'each' == l:opts
-        exec "normal bcw<?php foreach($){ ?>\n<?php } ?>\<Esc>bb%h"
+        exec "normal bcw<?php foreach(){ ?>\n<?php } ?>\<Esc>bb%h"
     endif
 
     return ''
@@ -93,7 +93,7 @@ function! CodingComplete()
         exec "normal a(  ){\n}\<Esc>%bbl"
     endif
     if 'each' == l:opts[n-2]
-        exec "normal Sforeach($".l:opts[n-1]." as $) {\n}\<Esc>bb"
+        exec "normal Sforeach(".l:opts[n-1]." as $){\n}\<Esc>bb"
     elseif 'date' == l:opts[n-1]
         exec "normal a('Y-m-d');\<Esc>bha"
     elseif 'last_month' == l:opts[n-1]
