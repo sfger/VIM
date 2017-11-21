@@ -9,6 +9,7 @@ letter-spacing word-spacing
 -webkit-line-clamp
 -webkit-overflow-scrolling touch
 -webkit-tap-highlight-color
+pointer-events
 position relative absolute sticky fixed z-index
 font font-size font-weight font-style font-family line-height
 color transparent black white purple red green blue
