@@ -2,9 +2,13 @@ display inline-block block inline table table-cell
 border border-left border-right border-top border-bottom border-radius box-shadow
 box-sizing border-box content-box
 outline outline-offset outline-radius
--webkit-overflow-scrolling touch
 Microsoft YaHei
 table-layout
+letter-spacing word-spacing
+-webkit-appearance
+-webkit-line-clamp
+-webkit-overflow-scrolling touch
+-webkit-tap-highlight-color
 position relative absolute sticky fixed z-index
 font font-size font-weight font-style font-family line-height
 color transparent black white purple red green blue

@@ -56,7 +56,7 @@ decodeURIComponent encodeURIComponent encodeURI decodeURI escape unescape
 parentNode firstChild lastChild previousSibling nextSibling children
 cellSpacing cellPadding width height
 style
-getElementsByClassName querySelectorAll
+getElementsByClassName querySelector querySelectorAll
 
 RegExp test exec lastIndex
 
