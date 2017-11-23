@@ -72,6 +72,7 @@ Date parse getFullYear getMonth getDate getHours getMinutes getSeconds getMillis
 Math pow sqrt PI random floor ceil round cos sin
 parseFloat parseInt toFixed toLocaleString
 Array charAt indeOf push pop shift unshift reverse
+entries
 String fromCharCode charCodeAt toLowerCase toUpperCase
 
 nextElementSibling previousElementSibling firstElementChild lastElementChild
