@@ -1,15 +1,6 @@
-display inline-block block inline table table-cell
+display inline-block block inline flex table table-cell table-layout
 border border-left border-right border-top border-bottom border-radius box-shadow
 box-sizing border-box content-box
-outline outline-offset outline-radius
-Microsoft YaHei
-table-layout
-letter-spacing word-spacing
--webkit-appearance
--webkit-line-clamp
--webkit-overflow-scrolling touch
--webkit-tap-highlight-color
-pointer-events
 position relative absolute sticky fixed z-index
 font font-size font-weight font-style font-family line-height
 color transparent black white purple red green blue
@@ -23,6 +14,11 @@ opacity filter content
 width height max-width max-height
 margin margin-left margin-right margin-top margin-bottom
 padding padding-left padding-right padding-top padding-bottom
+
+outline outline-offset outline-radius user-select pointer-events
+Microsoft YaHei SimSun SimHei
+letter-spacing word-spacing
+-webkit-appearance -webkit-line-clamp -webkit-overflow-scrolling touch -webkit-tap-highlight-color
 
 flex inline-flex flex-direction flex-wrap flex-flow order
 flex-grow flex-shrink flex-basis
@@ -44,3 +40,5 @@ animation
 animation-name animation-duration animation-timing-function animation-delay animation-iteration-counta animation-direction
 animation-play-state animation-fill-mode keyframes
 infinite
+
+constant safe-area-inset-top safe-area-inset-right safe-area-inset-bottom safe-area-inset-left
