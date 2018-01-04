@@ -14,6 +14,7 @@ opacity filter content
 width height max-width max-height
 margin margin-left margin-right margin-top margin-bottom
 padding padding-left padding-right padding-top padding-bottom
+-webkit-background-clip text
 
 outline outline-offset outline-radius user-select pointer-events
 Microsoft YaHei SimSun SimHei
@@ -25,15 +26,14 @@ flex-grow flex-shrink flex-basis
 justify-content align-content align-items align-self
 
 transform
+transform-style flat preserve-3d
+perspective perspective-origin
 matrix matrix3d
 translate translateX translateY translate3d
 translateX translateY translateZ translate3d
 rotate rotateX rotateY rotate3d
 scale scaleX scaleY scale3d
 skew skewX skewY
-perspective
-transform-style flat preserve-3d
-perspective-origin
 backface-visibility
 
 animation
