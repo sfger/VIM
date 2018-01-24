@@ -82,6 +82,7 @@ srcElement target
 deleteCell insertCell rows cells caption cellPadding cellSpacing rowIndex deleteRow insertRow options
 moveRow
 currentStyle getComputedStyle
+IntersectionObserver
 
 insertAdjacentHTML beforeBegin afterBegin beforeEnd afterEnd
 insertBefore createElement createTextNode replaceChild appendChild removeChild cloneNode
