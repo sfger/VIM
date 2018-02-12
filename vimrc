@@ -514,6 +514,9 @@ autocmd BufEnter *.ejs          set ft=ejs.html
 autocmd BufEnter *.tpl          set ft=ejs.html
 autocmd BufEnter *.vue          set ft=javascript.css.html.vue
 
+autocmd BufEnter *.wxss         set ft=css
+autocmd BufEnter *.wxml         set ft=ejs.html
+
 syntax enable                " 打开语法高亮
 syntax on                    " 开启文件类型侦测
 filetype indent on           " 针对不同的文件类型采用不同的缩进格式
@@ -526,7 +529,7 @@ let g:rust_recommended_style = 0
 set thesaurus=$HOME\vimfiles\keyword\list\en.list
 " set path=.,.\**,E:\ShellAlias\GccDir\MinGW\include
 set path=.,E:\ShellAlias\GccDir\MinGW\include
-set fdm=syntax
+set fdm=marker
 nmap <silent> \host :tabnew C:\Windows\System32\drivers\etc\hosts<CR>
 nmap \fd :NERDTreeFind<CR>
 let g:JavaComplete_MavenRepositoryDisable = 1
