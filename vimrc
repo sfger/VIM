@@ -516,7 +516,9 @@ autocmd BufEnter *.vue          set ft=javascript.css.html.vue
 
 autocmd BufEnter *.wxss         set ft=css
 autocmd BufEnter *.wxml         set ft=ejs.html
-autocmd BufRead,BufNewFile *.wpy		setlocal filetype=vue.html.javascript.css
+autocmd BufEnter *.wpy			set ft=html.vue
+autocmd BufEnter *.wxs			set ft=javascript
+autocmd BufEnter *.mjs			set ft=javascript
 
 syntax enable                " 打开语法高亮
 syntax on                    " 开启文件类型侦测

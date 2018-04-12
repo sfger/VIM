@@ -17,7 +17,7 @@ func! Compile()
 	elseif 'typescript' == &ft
 		let makeprg = 'set makeprg=tslint\ ' . expand("%")
 		setlocal errorformat=%-P,%f[%l\,\ %c]:\ %*\\S%*\\s%m
-	elseif 'javascript' == &ft
+	elseif 'javascript' == &ft || 'html.vue'==&ft
 		" let makeprg = 'set makeprg=jsl.bat\ process\ ' . expand("%")
 		let makeprg = 'set makeprg=eslint\ --no-color\ ' . expand("%")
 		setlocal errorformat=%+P%f,%*\\s%l:%c%*\\s%t%*\\S%*\\s%m

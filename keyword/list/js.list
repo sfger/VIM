@@ -1,19 +1,65 @@
-Number String Boolean undefined Array RegExp Object Symbol
-iterator typeof instanceof constructor __proto__ isPrototypeOf
-freeze isFrozen seal isSeal
+var let const
+
+for if else case switch
+continue break
+try catch
+
+import from
+
+this length prototype arguments callee caller
+
+Function function return
+
+Promise resolve reject then catch race all finally
+
+async await
+
+class extends
+
+Number toFixed parseFloat parseInt
+
+String
+Boolean
+undefined
+null
+Symbol
+Array
+
+RegExp test exec lastIndex
+
+Object assign create entries keys freeze
 preventExtensions
+defineProperty
+defineProperties
+getOwnPropertyDescriptor
+getOwnPropertyDescriptors
+getOwnPropertyNames
+getOwnPropertySymbols
+getPrototypeOf
+is
+isExtensible
+isFrozen
+seal
+isSealed
+
+toString toLocaleString
+
 JSON stringify parse
+
+iterator typeof instanceof constructor __proto__ isPrototypeOf
+
+alert prompt
 
 console log error
 debugger time timeEnd
 
 script javascript document referrer window location body navigator userAgent
+pathname
 
 history pushState replaceState onpopState
 
 HTMLElement Element Node
 
-defineProperty defineProperties getOwnPropertyDescriptor
 configurable enumerable value writable
 
 dataset
@@ -29,7 +75,8 @@ hasFocus activeElement
 onmousewheel DOMMouseScroll
 
 activeElement oncontextmenu
-addEventListener removeEventListener attachEvent detachEvent function undefined var alert return
+addEventListener capture once passive
+removeEventListener attachEvent detachEvent
 
 requestAnimationFrame cancelAnimationFrame
 
@@ -46,9 +93,7 @@ getSelection removeAllRanges
 elementFromPoint
 selection createRange empty clear
 execCommand
-this length prototype arguments callee caller
 hasOwnProperty
-toString
 createTextRange moveStart moveEnd findText select
 write writeln hostname search href domain title rowIndex
 innerHTML outerHTML innerText textContent outerText cssText
@@ -58,8 +103,6 @@ parentNode firstChild lastChild previousSibling nextSibling children
 cellSpacing cellPadding width height
 style
 getElementsByClassName querySelector querySelectorAll
-
-RegExp test exec lastIndex
 
 contentDocument windowDocument ActiveXObject Microsoft XMLHTTP XMLHttpRequest withCredentials
 setRequestHeader getResponseHeader getAllResponseHeaders responseText
@@ -71,9 +114,7 @@ CustomEvent bubbles cancelable
 new Image
 Date parse getFullYear getMonth getDate getHours getMinutes getSeconds getMilliseconds
 Math pow sqrt PI random floor ceil round cos sin
-parseFloat parseInt toFixed toLocaleString
-Array charAt indeOf push pop shift unshift reverse
-entries
+Array charAt indexOf push pop shift unshift reverse map reduce reduceRight forEach find
 String fromCharCode charCodeAt toLowerCase toUpperCase
 
 nextElementSibling previousElementSibling firstElementChild lastElementChild
@@ -88,7 +129,7 @@ insertAdjacentHTML beforeBegin afterBegin beforeEnd afterEnd
 insertBefore createElement createTextNode replaceChild appendChild removeChild cloneNode
 createAttribute removeAttribute setAttribute getAttribute hasAttribute createDocumentFragment
 onsubmit onclick onload onerror
-click
+click orientationchange
 setTimeout clearTimeout
 setInterval clearInterval
 replace match split search
