@@ -130,6 +130,7 @@ insertBefore createElement createTextNode replaceChild appendChild removeChild c
 createAttribute removeAttribute setAttribute getAttribute hasAttribute createDocumentFragment
 onsubmit onclick onload onerror
 click orientationchange
+setImmediate nextTick
 setTimeout clearTimeout
 setInterval clearInterval
 replace match split search
