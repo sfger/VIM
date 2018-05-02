@@ -3,7 +3,7 @@ border border-left border-right border-top border-bottom border-radius box-shado
 box-sizing border-box content-box
 position relative absolute sticky fixed z-index
 font font-size font-weight font-style font-family line-height
-color transparent black white purple red green blue
+color currentcolor transparent black white purple red green blue
 background background-color background-image background-position background-size background-repeat
 background-attachment background-clip background-origin
 linear-gradient repeating-linear-gradient repeating-radial-gradient
