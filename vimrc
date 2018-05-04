@@ -393,7 +393,7 @@ func! Dictionary(...)
 	:call system(ttt.' http://www.iciba.com/'.word)
 endfunc
 com! -nargs=* Dic call Dictionary(<f-args>)
-map ,f :let tmp = expand('<cword>') <Bar> exec("Dic ".tmp)<CR>
+map ,d :let tmp = expand('<cword>') <Bar> exec("Dic ".tmp)<CR>
 " }}}
 
 func! Myman()

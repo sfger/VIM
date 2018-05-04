@@ -103,7 +103,18 @@ func! Run()
 	silent! exe src_winnr . 'wincmd w'
 endfunc
 
+func! FormatFile()
+	let l:ft = &ft
+	let l:f = expand("%")
+	let l:order = 'js-beautify -f '.l:f
+	let ret = system( l:order )
+	:g/.*/d
+	let @0 = ret
+	:put!0
+endfunc
+
 autocmd FileType c,cpp,java,php,javascript,typescript nnoremap <buffer><silent> ,c :call Compile()<cr>
 autocmd FileType c,cpp,java,php,javascript,less,scss,typescript nnoremap <buffer><silent> ,r :call Run()<cr>
 autocmd FileType c,cpp,java,php,tmp,qf,javascript,less,scss,typescript nnoremap <buffer><silent> ,h :call HideOutput()<cr>
+autocmd FileType javascript nnoremap <buffer><silent> ,f :call FormatFile()<cr>
 autocmd FileType * set autoindent smartindent autochdir
