@@ -1,3 +1,4 @@
+
 func! Compile()
 	if 'c' == &ft
 		" let makeprg = 'set makeprg=gcc\ -Wall\ -o\ ' . expand("%:r") . '\ %'
@@ -104,17 +105,25 @@ func! Run()
 endfunc
 
 func! FormatFile()
-	let l:ft = &ft
-	let l:f = expand("%")
-	let l:order = 'js-beautify -f '.l:f
+	let l:order = 'js-beautify --type='
+	if 'css' == &ft || 'sass' == &ft || 'scss' == &ft || 'less' == &ft
+		let l:order .= 'css'
+	elseif 'html' == &ft || 'ejs.html' == &ft 
+		let l:order .= 'html'
+	elseif 'javascript' == &ft || 'javascript.jsx' == &ft || 'typescript' == &ft
+		let l:order .= 'js'
+	endif
+	let l:order .= ' -f ' . expand("%")
+	echo l:order
 	let ret = system( l:order )
 	:g/.*/d
 	let @0 = ret
 	:put!0
+	:$$/^$/d
 endfunc
 
 autocmd FileType c,cpp,java,php,javascript,typescript nnoremap <buffer><silent> ,c :call Compile()<cr>
 autocmd FileType c,cpp,java,php,javascript,less,scss,typescript nnoremap <buffer><silent> ,r :call Run()<cr>
 autocmd FileType c,cpp,java,php,tmp,qf,javascript,less,scss,typescript nnoremap <buffer><silent> ,h :call HideOutput()<cr>
-autocmd FileType javascript nnoremap <buffer><silent> ,f :call FormatFile()<cr>
+autocmd FileType javascript,javascript.jsx,typescript,html,css,scss,less,ejs,wxml,ejs.html,wxss nnoremap <buffer><silent> ,f :call FormatFile()<cr>
 autocmd FileType * set autoindent smartindent autochdir
