@@ -96,7 +96,7 @@ func! Run()
 	elseif -1!=index(split(l:ft, '\.'), 'javascript')
 		silent! exe '%!node ' . bin_file . '.js'
 	elseif 'less' == l:ft
-		silent! exe '%!lessc -x --no-color '.bin_file.'.less '.bin_file.'.css'
+		silent! exe '%!lessc --no-color --js '.bin_file.'.less'
 	elseif 'scss' == l:ft
 		silent! exe '%!node-sass --output-style compact '.bin_file.'.scss'
 	endif

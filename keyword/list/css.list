@@ -1,3 +1,4 @@
+inherit
 display inline-block block inline flex table table-cell table-layout
 border border-left border-right border-top border-bottom border-radius box-shadow
 box-sizing border-box content-box
@@ -24,6 +25,7 @@ letter-spacing word-spacing
 flex inline-flex flex-direction flex-wrap flex-flow order
 flex-grow flex-shrink flex-basis
 justify-content align-content align-items align-self
+space-around space-evenly space-between
 
 overscroll-behavior contain
 
