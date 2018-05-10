@@ -20,7 +20,7 @@ function! s:Strlen(string)
       let rv += &ts - i
       let i = 0
     else
-      let rv += 1
+      let rv += strlen(char)==3 ? 2 : 1
       let i = (i + 1) % &ts
     endif
   endfor

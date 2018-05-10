@@ -144,6 +144,7 @@ if has("win32")
 endif
 map <C-t> :tabnew<CR>
 
+map vv ^v$
 map <C-M-Down>    <C-w>-
 map <C-M-Up>      <C-w>+
 map <C-M-Left>    <C-w><
@@ -257,6 +258,10 @@ map <silent> \cmd <S-Down>
 " Delete the swap file
 " nmap \\. :echo strpart("Error  Deleted",7*(0==delete(expand("%:p:h")."/.".expand("%:t").".swp")),7)<cr>
 " }}}
+
+" abbr {{{
+:ab beautify /* beautify preserve:start */<CR>/* beautify preserve:end */
+"}}}
 
 " fn group{{{
 " fn Adjust_fontsize{{{
