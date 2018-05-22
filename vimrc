@@ -4,41 +4,41 @@ source $VIMRUNTIME/mswin.vim
 behave mswin
 set diffexpr=MyDiff()
 function! MyDiff()
-	let opt = '-a --binary '
-	if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
-	if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
-	let arg1 = v:fname_in
-	if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
-	let arg2 = v:fname_new
-	if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
-	let arg3 = v:fname_out
-	if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
-	if $VIMRUNTIME =~ ' '
-		if &sh =~ '\<cmd'
-			if empty(&shellxquote)
-				let l:shxq_sav = ''
-				set shellxquote&
-			endif
-			let cmd = '"' . $VIMRUNTIME . '\diff"'
-		else
-			let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
-		endif
-	else
-		let cmd = $VIMRUNTIME . '\diff'
-	endif
-	silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3
-	if exists('l:shxq_sav')
-		let &shellxquote=l:shxq_sav
-	endif
+  let opt = '-a --binary '
+  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
+  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
+  let arg1 = v:fname_in
+  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
+  let arg2 = v:fname_new
+  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
+  let arg3 = v:fname_out
+  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
+  if $VIMRUNTIME =~ ' '
+    if &sh =~ '\<cmd'
+      if empty(&shellxquote)
+        let l:shxq_sav = ''
+        set shellxquote&
+      endif
+      let cmd = '"' . $VIMRUNTIME . '\diff"'
+    else
+      let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
+    endif
+  else
+    let cmd = $VIMRUNTIME . '\diff'
+  endif
+  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3
+  if exists('l:shxq_sav')
+    let &shellxquote=l:shxq_sav
+  endif
 endfunction
 " }}}
 
 "g:os{{{
 let g:os="unix"
 if has("win32")
-	let g:os="win"
+  let g:os="win"
 elseif has('mac')
-	let g:os="mac"
+  let g:os="mac"
 endif
 "}}}
 
@@ -59,8 +59,8 @@ language messages zh_CN.UTF-8
 source $VIMRUNTIME/delmenu.vim  
 source $VIMRUNTIME/menu.vim  
 if bufname('')==''
-    cd $HOME
-    set fileencoding=utf-8
+  cd $HOME
+  set fileencoding=utf-8
 endif
 set fileencodings=GB2312,utf-8,gbk,ucs-bom,GB8030,default,latin
 set fileformats=dos,unix
@@ -123,24 +123,24 @@ set scrolloff=0
 
 " Toggle show menu{{{
 map <silent> <M-m> :if &guioptions =~# 'T' <Bar>
-        \set guioptions-=T guioptions-=m <bar>
-    \else <Bar>
-        \set guioptions+=T guioptions+=m <Bar>
-    \endif<CR>
+      \set guioptions-=T guioptions-=m <bar>
+      \else <Bar>
+      \set guioptions+=T guioptions+=m <Bar>
+      \endif<CR>
 map <silent> <M-n> :if &guioptions =~# 'b' <Bar>
-        \set nodiff noscrollbind guioptions-=b <bar>
-    \else <Bar>
-        \set diff scrollbind guioptions+=b <bar>
-    \endif<CR>
+      \set nodiff noscrollbind guioptions-=b <bar>
+      \else <Bar>
+      \set diff scrollbind guioptions+=b <bar>
+      \endif<CR>
 " }}}
 " }}}
 
 " map group{{{
 " window and tab map{{{
 if has("win32")
-	autocmd GUIEnter * simalt ~x
-	map <C-Up> :simalt ~x<CR>
-	map <C-Down> :simalt ~r<CR>
+  autocmd GUIEnter * simalt ~x
+  map <C-Up> :simalt ~x<CR>
+  map <C-Down> :simalt ~r<CR>
 endif
 map <C-t> :tabnew<CR>
 
@@ -155,7 +155,7 @@ map <silent> <C-S-Right> :let tmp = tabpagenr() <Bar> if tmp==tabpagenr("$") <Ba
 nnoremap <S-Left>  :tabp<CR>
 nnoremap <S-Right> :tabn<CR>
 for a in range(1,9)
-    exe 'map <A-' . a . '> ' . a . 'gt'
+  exe 'map <A-' . a . '> ' . a . 'gt'
 endfor
 " }}}
 
@@ -245,9 +245,9 @@ map \t2s :%s/\t/    /g<CR>
 map \s2t :%s/    /\t/g<CR>
 map \lcd :lcd %:p:h<CR>
 if g:os=='win'
-	map <silent> \xpr :call system('explorer "'.expand('%:p:h').'"')<CR>
+  map <silent> \xpr :call system('explorer "'.expand('%:p:h').'"')<CR>
 elseif g:os=='mac'
-	map <silent> \xpr :call system('open "'.expand('%:p:h').'"')<CR>
+  map <silent> \xpr :call system('open "'.expand('%:p:h').'"')<CR>
 endif
 " map <silent> <S-Down> :call system('cmd /c start')<CR>
 map <silent> <S-Down> :call system('conemu '.expand('%:p:h'))<CR>
@@ -266,19 +266,19 @@ map <silent> \cmd <S-Down>
 " fn group{{{
 " fn Adjust_fontsize{{{
 func! Adjust_fontsize(...)
-	let l:sel = get(a:000,0)
-	let l:font = &gfn
-	let l:temp = split(l:font, ':')
-	let l:size = strpart(l:temp[1], 1)
-	if l:size==1&&sel=='dec' | return | endif
-	if l:size==30&&sel=='inc' | return | endif
-	call remove(l:temp, 1)
-	if l:sel=='inc'
-		call add(l:temp, 'h' . ( 1 + l:size ))
-	elseif l:sel=='dec'
-		call add(l:temp, 'h' . ( -1 + l:size ))
-	endif
-	exec(':set guifont='.join(l:temp, ':'))
+  let l:sel = get(a:000,0)
+  let l:font = &gfn
+  let l:temp = split(l:font, ':')
+  let l:size = strpart(l:temp[1], 1)
+  if l:size==1&&sel=='dec' | return | endif
+  if l:size==30&&sel=='inc' | return | endif
+  call remove(l:temp, 1)
+  if l:sel=='inc'
+    call add(l:temp, 'h' . ( 1 + l:size ))
+  elseif l:sel=='dec'
+    call add(l:temp, 'h' . ( -1 + l:size ))
+  endif
+  exec(':set guifont='.join(l:temp, ':'))
 endfunc
 nmap <silent> <A-+> :call Adjust_fontsize('inc')<CR>
 nmap <silent> <A--> :call Adjust_fontsize('dec')<CR>
@@ -287,67 +287,67 @@ nmap <silent> <A--> :call Adjust_fontsize('dec')<CR>
 " fn MY_abbreviate{{{
 imap <C-TAB> <C-R>=MY_abbreviate()<CR><Right>
 function! MY_abbreviate()
-	let l:opts = Get_line_option( getline('.') )
-	"php http{{{
-	if 'html'==l:opts[0]
-		for item in [ {'key': 'iecp', 'val': '<!--[if lt IE 8]><p class="iecp"></p><![endif]-->'},
-					\ {'key': 'arrow', 'val': '<!--[if lt IE 8]><p class="before"></p><p class="after"></p><![endif]-->'},
-					\]
-			if item.key==l:opts[1]
-				exec "normal S" . item.val
-				return ''
-			endif
-		endfor
-	endif
-	if 'http'==l:opts[0]
-		for item in [ {'key': 'text', 'val': 'header("Content-Type: text/plain; charset=GBK");'},
-					\ {'key': 'length', 'val': 'header("Content-Length: 100");'},
-					\ {'key': 'download', 'val': 'header("Content-Type: application/force-download");'},
-					\ {'key': 'filename', 'val': 'header("Content-Disposition: attachment; filename=A.txt");'},
-					\]
-			if item.key==l:opts[1]
-				exec "normal S" . item.val
-				return ''
-			endif
-		endfor
-	endif
-	"}}}
-	"php iconv{{{
-	if 'iconv'==l:opts[0]
-		if len(l:opts)==3 && 'r'==l:opts[2]
-			exec "normal S$".l:opts[1]." = iconv('GBK', 'UTF-8//IGNORE', $".l:opts[1].");"
-		else
-			exec "normal S$".l:opts[1]." = iconv('UTF-8', 'GBK//IGNORE', $".l:opts[1].");"
-			"exec "normal S$".l:opts[1]." = iconv('UTF-8', 'GB18030//IGNORE', $".l:opts[1].");"
-		endif
-	endif
-	"}}}
-	return ''
+  let l:opts = Get_line_option( getline('.') )
+  "php http{{{
+  if 'html'==l:opts[0]
+    for item in [ {'key': 'iecp', 'val': '<!--[if lt IE 8]><p class="iecp"></p><![endif]-->'},
+          \ {'key': 'arrow', 'val': '<!--[if lt IE 8]><p class="before"></p><p class="after"></p><![endif]-->'},
+          \]
+      if item.key==l:opts[1]
+        exec "normal S" . item.val
+        return ''
+      endif
+    endfor
+  endif
+  if 'http'==l:opts[0]
+    for item in [ {'key': 'text', 'val': 'header("Content-Type: text/plain; charset=GBK");'},
+          \ {'key': 'length', 'val': 'header("Content-Length: 100");'},
+          \ {'key': 'download', 'val': 'header("Content-Type: application/force-download");'},
+          \ {'key': 'filename', 'val': 'header("Content-Disposition: attachment; filename=A.txt");'},
+          \]
+      if item.key==l:opts[1]
+        exec "normal S" . item.val
+        return ''
+      endif
+    endfor
+  endif
+  "}}}
+  "php iconv{{{
+  if 'iconv'==l:opts[0]
+    if len(l:opts)==3 && 'r'==l:opts[2]
+      exec "normal S$".l:opts[1]." = iconv('GBK', 'UTF-8//IGNORE', $".l:opts[1].");"
+    else
+      exec "normal S$".l:opts[1]." = iconv('UTF-8', 'GBK//IGNORE', $".l:opts[1].");"
+      "exec "normal S$".l:opts[1]." = iconv('UTF-8', 'GB18030//IGNORE', $".l:opts[1].");"
+    endif
+  endif
+  "}}}
+  return ''
 endfunction
 " }}}
 
 " fn Math_line{{{
 func! Math_line(...)
-	let sel = get(a:000, 0)
-	let n = line('$')
-	let ret = 0
-	let lnum = 1
-	if('sum'==sel)
-		while lnum <= line("$")
-			exec('let ret += '.getline(lnum))
-			let lnum += 1
-		endwhile
-	elseif('avg'==sel)
-		let ret = Math_line('sum')
-		if(floor(ret)==ret)
-			exec('let ret = '.ret.'.0/'.n)
-		else
-			let ret = ret / n
-		endif
-	elseif
-		return ''
-	endif
-	return ret
+  let sel = get(a:000, 0)
+  let n = line('$')
+  let ret = 0
+  let lnum = 1
+  if('sum'==sel)
+    while lnum <= line("$")
+      exec('let ret += '.getline(lnum))
+      let lnum += 1
+    endwhile
+  elseif('avg'==sel)
+    let ret = Math_line('sum')
+    if(floor(ret)==ret)
+      exec('let ret = '.ret.'.0/'.n)
+    else
+      let ret = ret / n
+    endif
+  elseif
+    return ''
+  endif
+  return ret
 endfunc
 com! -nargs=* M echo Math_line(<f-args>)
 " }}}
@@ -355,80 +355,80 @@ com! -nargs=* M echo Math_line(<f-args>)
 " fn GenerateInitTemplateCode{{{
 com! -nargs=* G call GenerateInitTemplateCode(<f-args>)
 func! GenerateInitTemplateCode(...)
-	let sel = get(a:000, 0)
-	let l:view = expand("%:r")
-	if('c') == sel
-		let l:temp = split(expand("%:p:h"), '\')
-		let l:path = l:temp[-1]
+  let sel = get(a:000, 0)
+  let l:view = expand("%:r")
+  if('c') == sel
+    let l:temp = split(expand("%:p:h"), '\')
+    let l:path = l:temp[-1]
 
-		let l:class = Camelize(l:temp[-1] . '_' .l:view)
-		:L ctrl
-		" exec('normal 3ggwcw' . l:class . "\<Esc>5ggf'a" . l:view)
-		exec('normal 2ggwcw' . l:class)
-	elseif('java') == sel
-		exec('normal ipublic class ' . l:view . "{\n}")
-		exec("normal Omain\<C-S-CR>")
-	else
-	endif
-	return ''
+    let l:class = Camelize(l:temp[-1] . '_' .l:view)
+    :L ctrl
+    " exec('normal 3ggwcw' . l:class . "\<Esc>5ggf'a" . l:view)
+    exec('normal 2ggwcw' . l:class)
+  elseif('java') == sel
+    exec('normal ipublic class ' . l:view . "{\n}")
+    exec("normal Omain\<C-S-CR>")
+  else
+  endif
+  return ''
 endfunc
 " }}}
 
 " fn Str2PHPArray{{{
 func! Str2PHPArray(str)
-	let l:tmp = split(a:str, "\n")
-	let l:ret = []
-	for l:item in l:tmp
-		let l:item = substitute(l:item, '^\|$' , '"', 'g')
-		let l:item = substitute(l:item, '\s\+', '" => "', 'g')
-		echo add(l:ret, l:item)
-	endfor
-	return join(l:ret, "\n")
+  let l:tmp = split(a:str, "\n")
+  let l:ret = []
+  for l:item in l:tmp
+    let l:item = substitute(l:item, '^\|$' , '"', 'g')
+    let l:item = substitute(l:item, '\s\+', '" => "', 'g')
+    echo add(l:ret, l:item)
+  endfor
+  return join(l:ret, "\n")
 endfunc
 vnoremap ,arr "zygv"=Str2PHPArray(@z)<CR>Pgv
 " }}}
 
 " fn Dictionary{{{
 func! Dictionary(...)
-	let word = get(a:000,0)
-	let ttt='ff'
-	if g:os=='mac'
-		let ttt='open'
-	endif
-	:call system(ttt.' http://www.iciba.com/'.word)
+  let word = get(a:000,0)
+  let ttt='ff'
+  if g:os=='mac'
+    let ttt='open'
+  endif
+  :call system(ttt.' http://www.iciba.com/'.word)
 endfunc
 com! -nargs=* Dic call Dictionary(<f-args>)
 map ,d :let tmp = expand('<cword>') <Bar> exec("Dic ".tmp)<CR>
 " }}}
 
 func! Myman()
-	let word = expand("<cword>")
-	echo word
-	exec "tab h ".word
+  let word = expand("<cword>")
+  echo word
+  exec "tab h ".word
 endfunc
 map K :call Myman()<CR>
 
 " fn Camelize{{{
 func! Camelize(str)
-    let l:temp = split(a:str, '_')
-    let l:ret = ''
-    for l:a in l:temp
-        let l:ret .= toupper(l:a[0]) . l:a[1:]
-    endfor
-    return l:ret
+  let l:temp = split(a:str, '_')
+  let l:ret = ''
+  for l:a in l:temp
+    let l:ret .= toupper(l:a[0]) . l:a[1:]
+  endfor
+  return l:ret
 endfunc
 " }}}
 
 " fn TwiddleCase{{{
 function! TwiddleCase(str)
-	if a:str ==# toupper(a:str)
-		let result = tolower(a:str)
-	elseif a:str ==# tolower(a:str)
-		let result = substitute(a:str,'\(\<\w\+\>\)', '\u\1', 'g')
-	else
-		let result = toupper(a:str)
-	endif
-	return result
+  if a:str ==# toupper(a:str)
+    let result = tolower(a:str)
+  elseif a:str ==# tolower(a:str)
+    let result = substitute(a:str,'\(\<\w\+\>\)', '\u\1', 'g')
+  else
+    let result = toupper(a:str)
+  endif
+  return result
 endfunction
 vnoremap ~ ygv"=TwiddleCase(@")<CR>Pgvl
 " }}}
@@ -436,38 +436,38 @@ vnoremap ~ ygv"=TwiddleCase(@")<CR>Pgvl
 " fn DirExplorer{{{
 com! -nargs=* D call DirExplorer(<f-args>)
 func! DirExplorer()
-    let l:temp = system('ls')
-    let l:line = split(l:temp, "\n")
-    :call remove(l:line, 0, 4)
-    :call remove(l:line, -2, -1)
-    let l:ret = []
-    for l:a in l:line
-        let l:b = split(l:a, '\s\{1,}')
-        for l:c in l:b
-            let l:ret = add(l:ret, l:c)
-        endfor
+  let l:temp = system('ls')
+  let l:line = split(l:temp, "\n")
+  :call remove(l:line, 0, 4)
+  :call remove(l:line, -2, -1)
+  let l:ret = []
+  for l:a in l:line
+    let l:b = split(l:a, '\s\{1,}')
+    for l:c in l:b
+      let l:ret = add(l:ret, l:c)
     endfor
-    echo l:ret
-    return ''
+  endfor
+  echo l:ret
+  return ''
 endfunc
 " }}}
 
 " fn Del_note{{{
 function! Del_note()
-	:%s/\s*\/\*\_.\{-}\*\///g
-	:%s/\s*\/\/[^'"]*$//g
+  :%s/\s*\/\*\_.\{-}\*\///g
+  :%s/\s*\/\/[^'"]*$//g
 endfunction
 " }}}
 
 " fn GetSystem{{{
 function! GetSystem()
-    if has("win32")
-        return "win32"
-    elseif has("unix")
-        return "unix"
-    else
-        return "mac"
-    endif
+  if has("win32")
+    return "win32"
+  elseif has("unix")
+    return "unix"
+  else
+    return "mac"
+  endif
 endfunction
 " }}}
 
@@ -475,29 +475,29 @@ endfunction
 " set colorcolumn=80
 map <silent> ,ch :call SetColorColumn()<CR>
 function! SetColorColumn()
-    let col_num = virtcol(".")
-    let cc_list = split(&cc, ',')
-    if count(cc_list, string(col_num)) <= 0
-        execute "set cc+=".col_num
-    else
-        execute "set cc-=".col_num
-    endif
+  let col_num = virtcol(".")
+  let cc_list = split(&cc, ',')
+  if count(cc_list, string(col_num)) <= 0
+    execute "set cc+=".col_num
+  else
+    execute "set cc-=".col_num
+  endif
 endfunction
 " }}}
 
 " fn Toggle_charset{{{
 nmap ,tr :call Toggle_charset()<CR>
 function! Toggle_charset()
-    if &encoding != 'utf-8'
-        :setlocal encoding=utf-8
-        :setlocal langmenu=zh_CN.UTF-8
-        :language messages zh_CN.UTF-8
-    else
-        :setlocal encoding=cp936
-        :setlocal langmenu=zh_CN.CP936
-        ":language messages zh_CN.CP936
-        :language messages zh_CN
-    endif
+  if &encoding != 'utf-8'
+    :setlocal encoding=utf-8
+    :setlocal langmenu=zh_CN.UTF-8
+    :language messages zh_CN.UTF-8
+  else
+    :setlocal encoding=cp936
+    :setlocal langmenu=zh_CN.CP936
+    ":language messages zh_CN.CP936
+    :language messages zh_CN
+  endif
 endfunction
 " }}}
 
@@ -505,8 +505,8 @@ endfunction
 
 " Java{{{
 if has("autocmd")
-	autocmd FileType java            setlocal omnifunc=javacomplete#Complete
-	autocmd FileType java            imap <C-u> <C-x><C-o><C-p>
+  autocmd FileType java            setlocal omnifunc=javacomplete#Complete
+  autocmd FileType java            imap <C-u> <C-x><C-o><C-p>
 endif
 " }}}
 
