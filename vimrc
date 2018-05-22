@@ -99,7 +99,7 @@ set ff=unix ffs=unix,dos,mac
 " }}}
 
 " common{{{
-set cursorline "cursorcolumn
+" set cursorline "cursorcolumn
 hi cursorline guibg=grey8 term=bold
 set ph=15
 hi Pmenu guibg=purple guifg=white
@@ -110,7 +110,7 @@ hi	lin	phpheredoc	string
 :hi normal guibg=black guifg=white
 set nu ai nobackup guifont=consolas:h16
 set autoindent smartindent autochdir
-set tabstop=4 softtabstop=4 shiftwidth=4 "expandtab
+set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 set mouse=a selection=exclusive selectmode=mouse,key
 set guioptions=EgrLt
 set wildmenu
