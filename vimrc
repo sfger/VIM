@@ -105,8 +105,8 @@ set ph=15
 hi Pmenu guibg=purple guifg=white
 hi Pmenusel guibg=green guifg=black term=bold
 
-hi	Folded	guifg=Yellow	guibg=DarkGreen
-hi	lin	phpheredoc	string
+hi  Folded  guifg=Yellow  guibg=DarkGreen
+hi  lin  phpheredoc  string
 :hi normal guibg=black guifg=white
 set nu ai nobackup guifont=consolas:h16
 set autoindent smartindent autochdir
@@ -185,24 +185,24 @@ imap <silent> <C-l> <Del>
 " imap <silent> <C-k> <C-o>dw
 " }}}
 " Emacs map{{{
-cnoremap <C-a>	<home>
-cnoremap <C-e>	<end>
-cnoremap <C-b>	<left>
-cnoremap <C-f>	<right>
-cnoremap <A-b>	<S-left>
-cnoremap <A-f>	<S-right>
-cnoremap <C-p>	<up>
-cnoremap <C-n>	<down>
-cnoremap <C-d>	<delete>
+cnoremap <C-a>  <home>
+cnoremap <C-e>  <end>
+cnoremap <C-b>  <left>
+cnoremap <C-f>  <right>
+cnoremap <A-b>  <S-left>
+cnoremap <A-f>  <S-right>
+cnoremap <C-p>  <up>
+cnoremap <C-n>  <down>
+cnoremap <C-d>  <delete>
 
-inoremap <C-a>	<home>
-inoremap <C-e>	<end>
-inoremap <C-b>	<left>
-inoremap <C-f>	<right>
-inoremap <A-b>	<C-left>
-inoremap <A-f>	<C-right>
-inoremap <C-d>	<delete>
-inoremap <A-d>	<C-o>dw
+inoremap <C-a>  <home>
+inoremap <C-e>  <end>
+inoremap <C-b>  <left>
+inoremap <C-f>  <right>
+inoremap <A-b>  <C-left>
+inoremap <A-f>  <C-right>
+inoremap <C-d>  <delete>
+inoremap <A-d>  <C-o>dw
 inoremap <C-Backspace>  <C-o>b<C-o>dw
 " inoremap <C-k>  <C-o>d$
 " inoremap <C-u>  <C-o>d^
@@ -241,8 +241,8 @@ map \src :source $home\vimfiles\vimrc<CR>
 map \vim :tabnew $home\vimfiles\vimrc<CR>
 map \dsl :g/^[ \t]*$/d<CR>
 map \dse :%s/[ \t]*$//g<CR>
-map \t2s :%s/\t/    /g<CR>
-map \s2t :%s/    /\t/g<CR>
+map \t2s :%s/\t/  /g<CR>
+map \s2t :%s/  /\t/g<CR>
 map \lcd :lcd %:p:h<CR>
 if g:os=='win'
   map <silent> \xpr :call system('explorer "'.expand('%:p:h').'"')<CR>
@@ -521,9 +521,12 @@ autocmd BufEnter *.vue          set ft=javascript.css.html.vue
 
 autocmd BufEnter *.wxss         set ft=css
 autocmd BufEnter *.wxml         set ft=ejs.html
-autocmd BufEnter *.wpy			set ft=html.vue
-autocmd BufEnter *.wxs			set ft=javascript
-autocmd BufEnter *.mjs			set ft=javascript
+autocmd BufEnter *.wpy          set ft=html.vue
+autocmd BufEnter *.wxs          set ft=javascript
+autocmd BufEnter *.mjs          set ft=javascript
+
+autocmd BufEnter *.js           set suffixesadd=.js,.mjs,.scss,.css
+autocmd BufEnter *.ejs           set suffixesadd=.ejs
 
 syntax enable                " 打开语法高亮
 syntax on                    " 开启文件类型侦测

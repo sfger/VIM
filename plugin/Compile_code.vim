@@ -113,12 +113,14 @@ func! FormatFile()
     let l:order .= 'js'
   endif
   let l:order .= ' -f ' . expand("%")
-  echo l:order
+  " echo l:order
+  let l:line = line('.')
   let ret = system( l:order )
   :g/.*/d
   let @0 = ret
   :put!0
   :$$/^$/d
+  exe l:line
 endfunc
 
 autocmd FileType c,cpp,java,php,javascript,typescript nnoremap <buffer><silent> ,c :call Compile()<cr>
