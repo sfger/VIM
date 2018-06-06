@@ -48,7 +48,8 @@ call pathogen#infect()
 filetype plugin on
 set cm=blowfish2
 set noundofile nocompatible
-set tags=./tags,tags
+" set tags=./tags,tags
+set tags=tags;
 " set tags=./tags,tags,E:/Projects/tags
 " }}}
 
@@ -142,7 +143,7 @@ if has("win32")
   map <C-Up> :simalt ~x<CR>
   map <C-Down> :simalt ~r<CR>
 endif
-map <C-t> :tabnew<CR>
+map ,n :tabnew<CR>
 
 map vv ^v$
 map <C-M-Down>    <C-w>-
