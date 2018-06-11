@@ -173,6 +173,7 @@ nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 
 " cursor amp{{{
 " gm
+nmap <C-f>  <PageDown>
 map gn g^
 " self define{{{
 imap <silent> <A-h> <C-Left>
@@ -195,7 +196,6 @@ cnoremap <A-f>  <S-right>
 cnoremap <C-p>  <up>
 cnoremap <C-n>  <down>
 cnoremap <C-d>  <delete>
-
 inoremap <C-a>  <home>
 inoremap <C-e>  <end>
 inoremap <C-b>  <left>
@@ -238,8 +238,8 @@ map <C-Left> "+<gvhhhh
 map <C-Right> "+>gv
 vn <C-c> "+ygv
 " o||O for going to the other end of selections text 
-map \src :source $home\vimfiles\vimrc<CR>
-map \vim :tabnew $home\vimfiles\vimrc<CR>
+map \src :source $HOME\vimfiles\vimrc<CR>
+map \vim :tabnew $HOME\vimfiles\vimrc<CR>
 map \dsl :g/^[ \t]*$/d<CR>
 map \dse :%s/[ \t]*$//g<CR>
 map \t2s :%s/\t/  /g<CR>
