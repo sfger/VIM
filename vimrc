@@ -550,11 +550,16 @@ autocmd BufEnter * set iskeyword=@,48-57,_,$,-,192-255
 " set ballooneval
 " vim: fdm=marker
 
+let g:NERDTreeFileExtensionHighlightFullName = 1
+let g:NERDTreeExactMatchHighlightFullName = 1
+let g:NERDTreePatternMatchHighlightFullName = 1
+
 call plug#begin('~/plugged/')
 Plug 'scrooloose/nerdtree'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'mattn/emmet-vim'
 Plug 'cakebaker/scss-syntax.vim'
+Plug 'godlygeek/tabular'
 Plug 'majutsushi/tagbar'
 Plug 'mxw/vim-jsx'
 Plug 'tpope/vim-surround'
@@ -564,7 +569,8 @@ Plug 'vim-scripts/matchit.zip'
 Plug 'vim-scripts/taglist.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'vim-scripts/vcscommand.vim'
-" Plug 'Townk/vim-autoclose' " 有错误
+Plug 'tpope/vim-fugitive'
+" Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-commentary'
 Plug 'pangloss/vim-javascript'
 Plug 'groenewege/vim-less'
@@ -572,4 +578,5 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'posva/vim-vue'
 Plug 'vim-scripts/YankRing.vim'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 call plug#end()
