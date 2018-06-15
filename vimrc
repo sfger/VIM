@@ -121,7 +121,7 @@ set noswapfile
 set diffopt=context:5
 set scrolloff=0
 set invpaste paste
-nnoremap :set invpaste paste? imap :set invpaste paste? set pastetoggle=
+" nnoremap :set invpaste paste? imap :set invpaste paste? set pastetoggle=
 " }}}
 
 " Toggle show menu{{{
