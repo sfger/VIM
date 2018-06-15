@@ -111,7 +111,7 @@ hi  lin  phpheredoc  string
 :hi normal guibg=black guifg=white
 set nu ai nobackup guifont=consolas:h16
 set autoindent smartindent autochdir
-set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+set tabstop=2 softtabstop=2 shiftwidth=2 expandtab smarttab
 set mouse=a selection=exclusive selectmode=mouse,key
 set guioptions=EgrLt
 set wildmenu
@@ -554,6 +554,8 @@ let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
 
+let g:ale_linters = {'javascript': ['eslint', 'prettier']}
+let b:ale_fixers = {'javascript': ['eslint', 'prettier']}
 call plug#begin('~/plugged/')
 Plug 'scrooloose/nerdtree'
 Plug 'jlanzarotta/bufexplorer'
@@ -579,4 +581,6 @@ Plug 'posva/vim-vue'
 Plug 'vim-scripts/YankRing.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'w0rp/ale'
 call plug#end()
+

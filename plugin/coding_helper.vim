@@ -1,11 +1,11 @@
 autocmd BufEnter *				let @p = expand('%:p') ? expand('%:p') : getcwd()
 autocmd BufEnter *.wxml			let @q = "{{}}"
 autocmd BufNewFile *.html       :L html
-autocmd FileType java           setl dictionary+=$home\vimfiles\keyword\list\java.list
-autocmd FileType php            setl dictionary+=$home\vimfiles\keyword\list\php.list
-autocmd FileType c,C,cpp        setl dictionary+=$home\vimfiles\keyword\list\cpp.list
-autocmd FileType css,lett,scss,sass        setl dictionary+=$home\vimfiles\keyword\list\css.list
-autocmd FileType javascript,xhtml,html,htm,wxml setl dictionary+=$home\vimfiles\keyword\list\js.list
+autocmd FileType java           setl dictionary+=$HOME\vimfiles\keyword\list\java.list
+autocmd FileType php            setl dictionary+=$HOME\vimfiles\keyword\list\php.list
+autocmd FileType c,C,cpp        setl dictionary+=$HOME\vimfiles\keyword\list\cpp.list
+autocmd FileType css,lett,scss,sass        setl dictionary+=$HOME\vimfiles\keyword\list\css.list
+autocmd FileType javascript,xhtml,html,htm,wxml setl dictionary+=$HOME\vimfiles\keyword\list\js.list
 imap <C-CR> <C-x><C-k>
 
 map \at :call AppendTime()<CR>
