@@ -1,5 +1,4 @@
 autocmd BufEnter *				let @p = expand('%:p') ? expand('%:p') : getcwd()
-autocmd BufEnter *.wxml			let @q = "{{}}"
 autocmd BufNewFile *.html       :L html
 autocmd FileType java           setl dictionary+=$HOME\vimfiles\keyword\list\java.list
 autocmd FileType php            setl dictionary+=$HOME\vimfiles\keyword\list\php.list

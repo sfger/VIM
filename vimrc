@@ -120,6 +120,8 @@ set ambiwidth=double
 set noswapfile
 set diffopt=context:5
 set scrolloff=0
+set invpaste paste
+nnoremap :set invpaste paste? imap :set invpaste paste? set pastetoggle=
 " }}}
 
 " Toggle show menu{{{
@@ -555,7 +557,18 @@ let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
 
 let g:ale_linters = {'javascript': ['eslint', 'prettier']}
-let b:ale_fixers = {'javascript': ['eslint', 'prettier']}
+let g:ale_linters = {'scss': ['prettier']}
+let g:ale_javascript_prettier_options = '--config ~/.prettierrc'
+let g:ale_fixers = {
+\   'javascript': ['eslint', 'prettier'],
+\   'css': 'prettier',
+\   'scss': 'prettier',
+\   'sass': 'prettier',
+\   'less': 'prettier',
+\   'markdown': 'prettier',
+\   'typescript': 'prettier',
+\   'json': 'prettier',
+\}
 call plug#begin('~/plugged/')
 Plug 'scrooloose/nerdtree'
 Plug 'jlanzarotta/bufexplorer'
@@ -582,5 +595,6 @@ Plug 'vim-scripts/YankRing.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'w0rp/ale'
+" Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss'] }
 call plug#end()
 

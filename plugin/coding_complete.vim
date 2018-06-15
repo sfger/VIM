@@ -23,7 +23,9 @@ endfun
 set completefunc=CompleteCoding
 "}}}
 imap <C-u> <C-x><C-u>
-imap <C-S-k> <Esc>"qphi
+
+" autocmd BufEnter *.wxml			let @q = "{{}}"
+" imap <C-S-k> <Esc>"qphi
 
 map <C-S-CR> :call CodeComplete()<CR>
 "CodingComplete{{{
