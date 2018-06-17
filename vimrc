@@ -557,18 +557,6 @@ let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
 
 let g:ale_linters = {'javascript': ['eslint', 'prettier']}
-let g:ale_linters = {'scss': ['prettier']}
-let g:ale_javascript_prettier_options = '--config ~/.prettierrc'
-let g:ale_fixers = {
-\   'javascript': ['eslint', 'prettier'],
-\   'css': 'prettier',
-\   'scss': 'prettier',
-\   'sass': 'prettier',
-\   'less': 'prettier',
-\   'markdown': 'prettier',
-\   'typescript': 'prettier',
-\   'json': 'prettier',
-\}
 call plug#begin('~/plugged/')
 Plug 'scrooloose/nerdtree'
 Plug 'jlanzarotta/bufexplorer'
