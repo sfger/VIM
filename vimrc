@@ -120,7 +120,7 @@ set ambiwidth=double
 set noswapfile
 set diffopt=context:5
 set scrolloff=0
-" set invpaste paste
+set invpaste paste
 " nnoremap :set invpaste paste? imap :set invpaste paste? set pastetoggle=
 " }}}
 
