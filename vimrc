@@ -100,8 +100,8 @@ set ff=unix ffs=unix,dos,mac
 " }}}
 
 " common{{{
-" set cursorline "cursorcolumn
-hi cursorline guibg=grey8 term=bold
+" set cursorline cursorcolumn
+" hi cursorline guibg=grey8 term=bold
 set ph=15
 hi Pmenu guibg=purple guifg=white
 hi Pmenusel guibg=green guifg=black term=bold
@@ -578,4 +578,3 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'w0rp/ale'
 Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss'] }
 call plug#end()
-
