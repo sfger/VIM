@@ -106,9 +106,9 @@ set ph=15
 hi Pmenu guibg=purple guifg=white
 hi Pmenusel guibg=green guifg=black term=bold
 
-hi  Folded  guifg=Yellow  guibg=DarkGreen
-hi  lin  phpheredoc  string
-:hi normal guibg=black guifg=white
+hi Folded guifg=Yellow guibg=DarkGreen
+hi lin phpheredoc string
+hi normal guibg=black guifg=white
 set nu ai nobackup guifont=consolas:h16
 set autoindent smartindent autochdir
 set tabstop=2 softtabstop=2 shiftwidth=2 expandtab smarttab
@@ -120,8 +120,8 @@ set ambiwidth=double
 set noswapfile
 set diffopt=context:5
 set scrolloff=0
-set invpaste paste
-nnoremap :set invpaste paste? imap :set invpaste paste? set pastetoggle=
+" set invpaste paste
+" nnoremap :set invpaste paste? imap :set invpaste paste? set pastetoggle=
 " }}}
 
 " Toggle show menu{{{
@@ -262,9 +262,7 @@ map <silent> \cmd <S-Down>
 " nmap \\. :echo strpart("Error  Deleted",7*(0==delete(expand("%:p:h")."/.".expand("%:t").".swp")),7)<cr>
 " }}}
 
-" abbr {{{
 :ab beautify /* beautify preserve:start */<CR>/* beautify preserve:end */
-"}}}
 
 " fn group{{{
 " fn Adjust_fontsize{{{
@@ -506,12 +504,8 @@ endfunction
 
 " }}}
 
-" Java{{{
-if has("autocmd")
-  autocmd FileType java            setlocal omnifunc=javacomplete#Complete
-  autocmd FileType java            imap <C-u> <C-x><C-o><C-p>
-endif
-" }}}
+autocmd FileType java            setlocal omnifunc=javacomplete#Complete
+autocmd FileType java            imap <C-u> <C-x><C-o><C-p>
 
 let g:typescript_compiler_options = '-sourcemap'
 autocmd QuickFixCmdPost [^l]* nested cwindow
@@ -529,7 +523,7 @@ autocmd BufEnter *.wxs          set ft=javascript
 autocmd BufEnter *.mjs          set ft=javascript
 
 autocmd BufEnter *.js           set suffixesadd=.js,.mjs,.scss,.css
-autocmd BufEnter *.ejs           set suffixesadd=.ejs
+autocmd BufEnter *.ejs          set suffixesadd=.ejs
 
 syntax enable                " 打开语法高亮
 syntax on                    " 开启文件类型侦测
@@ -547,7 +541,6 @@ set fdm=marker
 nmap <silent> \host :tabnew C:\Windows\System32\drivers\etc\hosts<CR>
 nmap \fd :NERDTreeFind<CR>
 let g:JavaComplete_MavenRepositoryDisable = 1
-autocmd FileType java setlocal omnifunc=javacomplete#Complete
 autocmd BufEnter * set iskeyword=@,48-57,_,$,-,192-255
 " set ballooneval
 " vim: fdm=marker
@@ -557,18 +550,6 @@ let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
 
 let g:ale_linters = {'javascript': ['eslint', 'prettier']}
-let g:ale_linters = {'scss': ['prettier']}
-let g:ale_javascript_prettier_options = '--config ~/.prettierrc'
-let g:ale_fixers = {
-\   'javascript': ['eslint', 'prettier'],
-\   'css': 'prettier',
-\   'scss': 'prettier',
-\   'sass': 'prettier',
-\   'less': 'prettier',
-\   'markdown': 'prettier',
-\   'typescript': 'prettier',
-\   'json': 'prettier',
-\}
 call plug#begin('~/plugged/')
 Plug 'scrooloose/nerdtree'
 Plug 'jlanzarotta/bufexplorer'
@@ -595,6 +576,6 @@ Plug 'vim-scripts/YankRing.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'w0rp/ale'
-" Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss'] }
+Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss'] }
 call plug#end()
 

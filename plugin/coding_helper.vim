@@ -1,4 +1,4 @@
-autocmd BufEnter *				let @p = expand('%:p') ? expand('%:p') : getcwd()
+autocmd BufEnter *              let @p = expand('%:p') ? expand('%:p') : getcwd()
 autocmd BufNewFile *.html       :L html
 autocmd FileType java           setl dictionary+=$HOME\vimfiles\keyword\list\java.list
 autocmd FileType php            setl dictionary+=$HOME\vimfiles\keyword\list\php.list
@@ -111,15 +111,15 @@ func! LoadModel(...)
     let dir = 'vimfiles'
   endif
   let $VIM_TEMP = $HOME.ds.dir.ds.'keyword'.ds.'load'
-  let items = {'xhtml':	'default.html',
-        \'html':	'html5.html',
-        \'c':		'init.c',
-        \'C':		'init.cpp',
-        \'link':	'time_link.php',
-        \'chart':	'chart.php',
-        \'v':		'view.php',
-        \'ctrl':	'ctrl.php',
-        \}
+  let items = {'xhtml': 'default.html',
+              \'html':  'html5.html',
+              \'c':     'init.c',
+              \'C':     'init.cpp',
+              \'link':  'time_link.php',
+              \'chart': 'chart.php',
+              \'v':     'view.php',
+              \'ctrl':  'ctrl.php',
+              \}
   if has_key(items, ft)
     let file = items[ft]
   elseif getftype($VIM_TEMP . ds . ft) == 'file'

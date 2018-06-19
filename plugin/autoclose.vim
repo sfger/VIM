@@ -72,6 +72,10 @@ fun <SID>ToggleAutoCloseMappings() " --- {{{2
         iunmap )
         iunmap [
         iunmap ]
+        iunmap <%
+        iunmap %>
+        iunmap <?
+        iunmap ?>
         iunmap {{
         iunmap }}
         iunmap {
@@ -90,6 +94,10 @@ fun <SID>ToggleAutoCloseMappings() " --- {{{2
         inoremap <silent> [ [<C-R>=<SID>CloseStackPush(']')<CR>
         inoremap <silent> ] <C-R>=<SID>CloseStackPop(']')<CR>
         "inoremap <silent> { {<C-R>=<SID>CloseStackPush('}')<CR>
+        inoremap <silent> <? <C-R>=<SID>OpenSpecial('<?','?>')<CR>
+        inoremap <silent> ?> <C-R>=<SID>CloseStackPop('?>')<CR>
+        inoremap <silent> <% <C-R>=<SID>OpenSpecial('<%','%>')<CR>
+        inoremap <silent> %> <C-R>=<SID>CloseStackPop('%>')<CR>
         inoremap <silent> { <C-R>=<SID>OpenSpecial('{','}')<CR>
         inoremap <silent> } <C-R>=<SID>CloseStackPop('}')<CR>
         inoremap <silent> {{ <C-R>=<SID>OpenSpecial('{{','}}')<CR>
