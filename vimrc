@@ -105,6 +105,7 @@ set ff=unix ffs=unix,dos,mac
 set ph=15
 hi Pmenu guibg=purple guifg=white
 hi Pmenusel guibg=green guifg=black term=bold
+hi conceal guibg=green guifg=black term=bold
 
 hi Folded guifg=Yellow guibg=DarkGreen
 hi lin phpheredoc string
@@ -551,6 +552,23 @@ let g:NERDTreePatternMatchHighlightFullName = 1
 
 let g:ale_linters = { 'javascript': ['eslint', 'prettier'], 'typescript': ['eslint', 'prettier'] }
 call plug#begin('~/plugged/')
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_flow = 1
+" let g:javascript_plugin_ngdoc = 1
+" augroup javascript_folding
+"     au!
+"     au FileType javascript setlocal foldmethod=syntax
+" augroup END
+set conceallevel=1 "concealcursor=niv
+let g:javascript_conceal_function             = "ƒ"
+let g:javascript_conceal_this                 = "@"
+let g:javascript_conceal_prototype            = "¶"
+" let g:javascript_conceal_null                 = "ø"
+" let g:javascript_conceal_return               = "R"
+" let g:javascript_conceal_undefined            = "¿"
+" let g:javascript_conceal_NaN                  = "ℕ"
+" let g:javascript_conceal_static               = "•"
+" let g:javascript_conceal_super                = "Ω"
 Plug 'scrooloose/nerdtree'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'mattn/emmet-vim'
@@ -570,6 +588,7 @@ Plug 'tpope/vim-fugitive'
 " Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-commentary'
 Plug 'pangloss/vim-javascript'
+Plug 'heavenshell/vim-jsdoc'
 Plug 'groenewege/vim-less'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'posva/vim-vue'
