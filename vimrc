@@ -215,7 +215,7 @@ set cedit=<C-x>
 
 " Tlist{{{
 map \tt :TlistToggle<CR>
-map <S-Up> :TlistToggle<CR>
+map <S-Up> :TagbarToggle<CR>
 " let Tlist_Ctags_Cmd = 'D:d\ShellAlias\ctags.exe'
 let Tlist_Auto_Open=0
 " let Tlist_Compact_Format = 1
@@ -559,7 +559,8 @@ Plug 'godlygeek/tabular'
 Plug 'majutsushi/tagbar'
 Plug 'mxw/vim-jsx'
 Plug 'tpope/vim-surround'
-Plug 'nikvdp/ejs-syntax'
+" Plug 'nikvdp/ejs-syntax'
+Plug 'briancollins/vim-jst'
 Plug 'plasticboy/vim-markdown'
 Plug 'vim-scripts/matchit.zip'
 Plug 'vim-scripts/taglist.vim'
