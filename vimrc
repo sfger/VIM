@@ -564,7 +564,7 @@ let g:javascript_plugin_flow = 1
 "     au FileType javascript setlocal foldmethod=syntax
 " augroup END
 set conceallevel=1 "concealcursor=niv
-let g:javascript_conceal_function             = "ƒ"
+let g:javascript_conceal_function             = "f"
 let g:javascript_conceal_this                 = "@"
 let g:javascript_conceal_prototype            = "¶"
 " let g:javascript_conceal_null                 = "ø"
@@ -573,9 +573,18 @@ let g:javascript_conceal_prototype            = "¶"
 " let g:javascript_conceal_NaN                  = "ℕ"
 " let g:javascript_conceal_static               = "•"
 " let g:javascript_conceal_super                = "Ω"
+let tern_show_signature_in_pum = 1
+let tern_show_argument_hints = 'on_hold'
+autocmd FileType javascript nnoremap <leader>d :TernDef<CR>
+" let mapleader="\\"
+let maplocalleader=","
+autocmd FileType javascript setlocal omnifunc=tern#Complete
 call plug#begin('~/plugged/')
 " Plug 'artur-shaik/vim-javacomplete2'
+Plug 'brooth/far.vim'
+Plug 'dkprice/vim-easygrep'
 Plug 'Valloric/YouCompleteMe'
+Plug 'marijnh/tern_for_vim', {'do': 'npm install'}
 Plug 'scrooloose/nerdtree'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'mattn/emmet-vim'
