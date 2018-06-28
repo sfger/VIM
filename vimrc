@@ -551,7 +551,11 @@ let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
 
 let g:ale_linters = { 'javascript': ['eslint', 'prettier'], 'typescript': ['eslint', 'prettier'] }
-call plug#begin('~/plugged/')
+let g:ale_java_javac_options = '-encoding UTF-8  -J-Duser.language=en'
+" let g:ale_sign_column_always = 1
+let g:ale_set_highlights = 0
+"在vim自带的状态栏中整合ale
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_flow = 1
 " let g:javascript_plugin_ngdoc = 1
@@ -569,6 +573,9 @@ let g:javascript_conceal_prototype            = "¶"
 " let g:javascript_conceal_NaN                  = "ℕ"
 " let g:javascript_conceal_static               = "•"
 " let g:javascript_conceal_super                = "Ω"
+call plug#begin('~/plugged/')
+" Plug 'artur-shaik/vim-javacomplete2'
+Plug 'Valloric/YouCompleteMe'
 Plug 'scrooloose/nerdtree'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'mattn/emmet-vim'
@@ -577,9 +584,13 @@ Plug 'godlygeek/tabular'
 Plug 'majutsushi/tagbar'
 Plug 'mxw/vim-jsx'
 Plug 'tpope/vim-surround'
+Plug 'othree/html5.vim'
+Plug 'tpope/vim-ragtag'
 " Plug 'nikvdp/ejs-syntax'
-Plug 'briancollins/vim-jst'
+" Plug 'briancollins/vim-jst'
+" Plug 'gregsexton/MatchTag'
 Plug 'plasticboy/vim-markdown'
+" Plug 'sheerun/vim-polyglot'
 Plug 'vim-scripts/matchit.zip'
 Plug 'vim-scripts/taglist.vim'
 Plug 'leafgarland/typescript-vim'
