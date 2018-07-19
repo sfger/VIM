@@ -578,13 +578,18 @@ let tern_show_argument_hints = 'on_hold'
 autocmd FileType javascript nnoremap <leader>d :TernDef<CR>
 " let mapleader="\\"
 let maplocalleader=","
-autocmd FileType javascript setlocal omnifunc=tern#Complete
+" autocmd FileType javascript setlocal omnifunc=tern#Complete
+
+let g:user_emmet_install_global = 0
+let g:user_emmet_settings = { 'javascript.jsx': { 'extends': 'jsx' } }
+autocmd FileType html,css,javascript.jsx EmmetInstall
+
 call plug#begin('~/plugged/')
 " Plug 'artur-shaik/vim-javacomplete2'
 Plug 'brooth/far.vim'
 Plug 'dkprice/vim-easygrep'
-Plug 'Valloric/YouCompleteMe'
-Plug 'marijnh/tern_for_vim', {'do': 'npm install'}
+" Plug 'Valloric/YouCompleteMe'
+" Plug 'marijnh/tern_for_vim', {'do': 'npm install'}
 Plug 'scrooloose/nerdtree'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'mattn/emmet-vim'
