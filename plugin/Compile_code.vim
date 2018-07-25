@@ -87,6 +87,8 @@ func! Run()
     silent! exe '%!a'
   elseif 'typescript'==l:ft
     silent! exe '%!node '. bin_file . '.js'
+  elseif 'python'==l:ft
+    silent! exe '%!python ' . bin_file . '.py'
   elseif 'php'==l:ft
     silent! exe '%!php ' . bin_file . '.php'
   elseif 'java'==l:ft
@@ -124,7 +126,7 @@ func! FormatFile()
 endfunc
 
 autocmd FileType c,cpp,java,php,javascript,typescript nnoremap <buffer><silent> ,c :call Compile()<cr>
-autocmd FileType c,cpp,java,php,javascript,less,scss,typescript nnoremap <buffer><silent> ,r :call Run()<cr>
-autocmd FileType c,cpp,java,php,tmp,qf,javascript,less,scss,typescript nnoremap <buffer><silent> ,h :call HideOutput()<cr>
+autocmd FileType c,cpp,java,php,javascript,less,scss,typescript,python nnoremap <buffer><silent> ,r :call Run()<cr>
+autocmd FileType c,cpp,java,php,tmp,qf,javascript,less,scss,typescript,python nnoremap <buffer><silent> ,h :call HideOutput()<cr>
 autocmd FileType javascript,javascript.jsx,typescript,html,php,css,scss,less,ejs,wxml,ejs.html,wxss nnoremap <buffer><silent> ,f :call FormatFile()<cr>
 autocmd FileType * set autoindent smartindent autochdir
