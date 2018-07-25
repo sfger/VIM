@@ -156,6 +156,8 @@ map <C-M-Right>   <C-w>>
 map <silent> <C-S-Left>  :let tmp = tabpagenr()-2 <Bar> if -1==tmp <Bar> tabm <Bar> else <Bar> exec("tabm ".tmp) <Bar> endif<CR>
 map <silent> <C-S-Right> :let tmp = tabpagenr() <Bar> if tmp==tabpagenr("$") <Bar> tabm 0 <Bar> else <Bar> exec("tabm ".(tmp+1)) <Bar> endif<CR>
 
+nnoremap <A-Up> :ALEPrevious<CR>
+nnoremap <A-Down> :ALENext<CR>
 nnoremap <S-Left>  :tabp<CR>
 nnoremap <S-Right> :tabn<CR>
 for a in range(1,9)
