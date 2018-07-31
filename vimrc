@@ -584,7 +584,7 @@ let maplocalleader=","
 
 let g:user_emmet_install_global = 0
 let g:user_emmet_settings = { 'javascript.jsx': { 'extends': 'jsx' } }
-autocmd FileType html,css,javascript.jsx EmmetInstall
+autocmd FileType ejs.html,html,css,javascript.jsx EmmetInstall
 
 call plug#begin('~/plugged/')
 " Plug 'artur-shaik/vim-javacomplete2'
