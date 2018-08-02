@@ -624,4 +624,10 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'w0rp/ale'
 Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss'] }
+Plug 'rhysd/vim-clang-format'
 call plug#end()
+
+command -range=% -nargs=* Test :echo GetSelectText(<line1>, <line2>)
+func GetSelectText(line1, line2)
+  return getline( a:line1, a:line2 )
+endfunc
