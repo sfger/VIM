@@ -629,5 +629,5 @@ call plug#end()
 
 command -range=% -nargs=* Test :echo GetSelectText(<line1>, <line2>)
 func GetSelectText(line1, line2)
-  return getline( a:line1, a:line2 )
+  return join(getline( a:line1, a:line2 ), "\n")
 endfunc
