@@ -566,9 +566,9 @@ let g:javascript_plugin_flow = 1
 "     au FileType javascript setlocal foldmethod=syntax
 " augroup END
 set conceallevel=1 "concealcursor=niv
-let g:javascript_conceal_function             = "f"
-let g:javascript_conceal_this                 = "@"
-let g:javascript_conceal_prototype            = "¶"
+" let g:javascript_conceal_function             = "f"
+" let g:javascript_conceal_this                 = "@"
+" let g:javascript_conceal_prototype            = "¶"
 " let g:javascript_conceal_null                 = "ø"
 " let g:javascript_conceal_return               = "R"
 " let g:javascript_conceal_undefined            = "¿"
