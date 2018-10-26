@@ -586,6 +586,8 @@ let g:user_emmet_install_global = 0
 let g:user_emmet_settings = { 'javascript.jsx': { 'extends': 'jsx' } }
 autocmd FileType ejs.html,html,css,javascript.jsx EmmetInstall
 
+let g:ale_python_pylint_executable = 'python3'
+
 call plug#begin('~/plugged/')
 " Plug 'artur-shaik/vim-javacomplete2'
 Plug 'brooth/far.vim'
