@@ -135,6 +135,8 @@ setTimeout clearTimeout
 setInterval clearInterval
 replace match split search
 
+startsWith endsWith
+
 CollectGarbage collect
 
 canvas getContext 2d

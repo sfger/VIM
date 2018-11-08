@@ -12,4 +12,6 @@ list range
 chr ord abs
 
 from import
-base64 math
+base64 b64encode, b64decode
+math pi
+json dumps loads
