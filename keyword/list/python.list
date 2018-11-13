@@ -2,16 +2,24 @@ True False
 int float str bool
 
 if elif else continue break while for in
+yield
+
+lambda
+lower upper
 
 def return pass
 
 isinstance
+Iterable Iterator
 
 print
 list range
-chr ord abs
+chr ord abs filter sorted
 
 from import
 base64 b64encode, b64decode
+functools map reduce
 math pi
 json dumps loads
+
+isinstance
