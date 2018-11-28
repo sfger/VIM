@@ -3,6 +3,7 @@ int float str bool
 
 if elif else continue break while for in
 yield
+enumerate
 
 lambda
 lower upper

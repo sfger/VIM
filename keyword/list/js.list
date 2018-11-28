@@ -1,24 +1,17 @@
 var let const
 
+function return Function
+class extends
+
+Promise resolve reject then catch race all finally
+
+import from
+
 for if else case switch
 continue break
 try catch
 
-import from
-
-this length prototype arguments callee caller
-
-Function function return
-
-Promise resolve reject then catch race all finally
-
 async await
-
-class extends
-
-MutationObserver
-observe disconnect takeRecords
-childList attributes characterData subtree attributeOldValue characterDataOldValue attributeFilter
 
 Number toFixed parseFloat parseInt
 
@@ -26,8 +19,21 @@ String
 Boolean
 undefined
 null
-Symbol
 Array
+Symbol
+hasInstance
+iterator
+isConcatSpreadable
+unscopables
+match
+replace
+search
+split
+species
+toPrimitive
+toStringTag
+
+this length prototype arguments callee caller
 
 RegExp test exec lastIndex
 
@@ -52,6 +58,10 @@ JSON stringify parse
 
 iterator typeof instanceof constructor __proto__ isPrototypeOf
 
+MutationObserver
+observe disconnect takeRecords
+childList attributes characterData subtree attributeOldValue characterDataOldValue attributeFilter
+
 alert prompt
 
 console log error
@@ -60,7 +70,7 @@ debugger time timeEnd
 script javascript document referrer window location body navigator userAgent
 pathname
 
-history pushState replaceState onpopState
+history pushState replaceState onpopstate go back
 
 HTMLElement Element Node
 
@@ -110,7 +120,8 @@ getElementsByClassName querySelector querySelectorAll
 
 contentDocument windowDocument ActiveXObject Microsoft XMLHTTP XMLHttpRequest withCredentials
 setRequestHeader getResponseHeader getAllResponseHeaders responseText
-open send onreadystatechange status statusText DOMContentLoaded
+open send onreadystatechange status statusText
+DOMContentLoaded readyState complete visibilityState
 preventDefault stopPropagation stopImmediatePropagation returnValue cancelBubble
 createEvent initEvent dispatchEvent
 CustomEvent bubbles cancelable
@@ -118,8 +129,8 @@ CustomEvent bubbles cancelable
 new Image
 Date parse getFullYear getMonth getDate getHours getMinutes getSeconds getMilliseconds
 Math pow sqrt PI random floor ceil round cos sin
-Array charAt indexOf push pop shift unshift reverse map reduce reduceRight forEach find
-String fromCharCode charCodeAt toLowerCase toUpperCase
+Array from of indexOf push pop shift unshift reverse map reduce reduceRight filter includes forEach find findIndex fill
+String charAt fromCharCode charCodeAt toLowerCase toUpperCase
 
 nextElementSibling previousElementSibling firstElementChild lastElementChild
 srcElement target
@@ -170,10 +181,10 @@ translate rotate scale transform setTransform
 
 setCustomValidity checkValidity
 
-jQuery parent parents filter find after before text show hide attr html toggleClass removeClass addClass
+jQuery parent parents find after before text show hide attr html toggleClass removeClass addClass
 append appendTo delegateTarget xhrFields
 
-React ReactDOM createClass displayName render
+React ReactDOM displayName render
 state setState getInitialState
 onClick
 dangerouslySetInnerHTML

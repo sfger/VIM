@@ -552,7 +552,10 @@ let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
 
-let g:ale_linters = { 'javascript': ['eslint', 'prettier'], 'typescript': ['eslint', 'prettier'] }
+let g:ale_linters = {
+  \'javascript': ['eslint', 'prettier'], 'typescript': ['eslint', 'prettier'],
+  \'html': [ 'HTMLHint', 'proselint', 'prettier', 'tidy', 'eslint' ]
+\}
 let g:ale_java_javac_options = '-encoding UTF-8  -J-Duser.language=en'
 " let g:ale_sign_column_always = 1
 let g:ale_set_highlights = 0

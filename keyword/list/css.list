@@ -17,6 +17,20 @@ margin margin-left margin-right margin-top margin-bottom
 padding padding-left padding-right padding-top padding-bottom
 -webkit-background-clip text
 
+grid
+grid-template grid-template-areas grid-template-columns grid-template-rows
+grid-gap grid-column-gap grid-row-gap
+justify-items align-items place-items
+justify-content align-content place-content
+grid-auto-flow grid-auto-columns grid-auto-rows
+
+grid-area grid-column grid-row
+grid-row-start grid-row-end
+grid-column-start grid-column-end
+justify-self align-self place-self
+
+auto-fit auto-fill minmax
+
 outline outline-offset outline-radius user-select pointer-events
 Microsoft YaHei SimSun SimHei
 letter-spacing word-spacing
