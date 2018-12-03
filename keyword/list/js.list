@@ -62,6 +62,10 @@ MutationObserver
 observe disconnect takeRecords
 childList attributes characterData subtree attributeOldValue characterDataOldValue attributeFilter
 
+WebSocket send
+binaryType
+onopen onclose onerror onmessage 
+
 alert prompt
 
 console log error
@@ -149,6 +153,8 @@ setImmediate nextTick
 setTimeout clearTimeout
 setInterval clearInterval
 replace match split search
+
+animationstart animationiteration animationend
 
 startsWith endsWith
 
