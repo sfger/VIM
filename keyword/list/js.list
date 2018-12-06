@@ -23,6 +23,7 @@ Array
 Symbol
 hasInstance
 iterator
+asyncIterator
 isConcatSpreadable
 unscopables
 match
@@ -157,6 +158,15 @@ replace match split search
 animationstart animationiteration animationend
 
 startsWith endsWith
+
+indexedDB open close
+onerror onsuccess onupgradeneeded
+createObjectStore keyPath autoIncrement
+objectStoreNames contains
+createIndex unique
+transaction readwrite readonly oncomplete
+objectStore add get put delete openCursor continue
+IDBKeyRange only
 
 CollectGarbage collect
 
