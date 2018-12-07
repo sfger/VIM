@@ -591,6 +591,7 @@ autocmd FileType ejs.html,html,css,javascript.jsx EmmetInstall
 
 let g:ale_python_pylint_executable = 'python3'
 
+" let dart_format_on_save = 1
 call plug#begin('~/plugged/')
 " Plug 'artur-shaik/vim-javacomplete2'
 Plug 'brooth/far.vim'
@@ -630,6 +631,7 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'w0rp/ale'
 Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss'] }
 Plug 'rhysd/vim-clang-format'
+Plug 'dart-lang/dart-vim-plugin'
 call plug#end()
 
 command -range=% -nargs=* Test :echo GetSelectText(<line1>, <line2>)

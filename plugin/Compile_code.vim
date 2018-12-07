@@ -100,21 +100,27 @@ func! Run()
     silent! exe '%!lessc --no-color --js '.bin_file.'.less'
   elseif 'scss' == l:ft
     silent! exe '%!node-sass --output-style compact '.bin_file.'.scss'
+  elseif 'dart' == l:ft
+    silent! exe '%!dart '.bin_file.'.dart'
   endif
 
   silent! exe src_winnr . 'wincmd w'
 endfunc
 
 func! FormatFile()
-  let l:order = 'js-beautify --type='
-  if 'css' == &ft || 'sass' == &ft || 'scss' == &ft || 'less' == &ft
-    let l:order .= 'css'
-  elseif 'html' == &ft || 'ejs.html' == &ft || 'php' == &ft
-    let l:order .= 'html'
-  elseif 'javascript' == &ft || 'javascript.jsx' == &ft || 'typescript' == &ft
-    let l:order .= 'js'
+  if 'dart' == &ft 
+    let l:order = 'dartfmt '.expand("%")
+  else
+    let l:order = 'js-beautify --type='
+    if 'css' == &ft || 'sass' == &ft || 'scss' == &ft || 'less' == &ft
+      let l:order .= 'css'
+    elseif 'html' == &ft || 'ejs.html' == &ft || 'php' == &ft
+      let l:order .= 'html'
+    elseif 'javascript' == &ft || 'javascript.jsx' == &ft || 'typescript' == &ft
+      let l:order .= 'js'
+    endif
+    let l:order .= ' -f ' . expand("%")
   endif
-  let l:order .= ' -f ' . expand("%")
   " echo l:order
   let l:line = line('.')
   let ret = system( l:order )
@@ -126,7 +132,7 @@ func! FormatFile()
 endfunc
 
 autocmd FileType c,cpp,java,php,javascript,typescript nnoremap <buffer><silent> ,c :call Compile()<cr>
-autocmd FileType c,cpp,java,php,javascript,less,scss,typescript,python nnoremap <buffer><silent> ,r :call Run()<cr>
-autocmd FileType c,cpp,java,php,tmp,qf,javascript,less,scss,typescript,python nnoremap <buffer><silent> ,h :call HideOutput()<cr>
-autocmd FileType javascript,javascript.jsx,typescript,html,php,css,scss,less,ejs,wxml,ejs.html,wxss nnoremap <buffer><silent> ,f :call FormatFile()<cr>
+autocmd FileType c,cpp,java,php,javascript,less,scss,typescript,python,dart nnoremap <buffer><silent> ,r :call Run()<cr>
+autocmd FileType c,cpp,java,php,tmp,qf,javascript,less,scss,typescript,python,dart nnoremap <buffer><silent> ,h :call HideOutput()<cr>
+autocmd FileType javascript,javascript.jsx,typescript,html,php,css,scss,less,ejs,wxml,ejs.html,wxss,dart nnoremap <buffer><silent> ,f :call FormatFile()<cr>
 autocmd FileType * set autoindent smartindent autochdir
