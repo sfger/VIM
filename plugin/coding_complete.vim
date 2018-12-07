@@ -81,14 +81,19 @@ function! CodingComplete()
 
   "General start
   "echo l:opts | return ''
-  if 'fn' == l:opts[n-1] | exec "normal bDafunction(){\n}\<Esc>ba" | endif
-  if 'fn,' == l:opts[n-1] | exec "normal bbDafunction(){\n},\<Esc>bba" | endif
-  if 'fn;' == l:opts[n-1] | exec "normal bbDafunction(){\n};\<Esc>bba" | endif
+  if 'fn' == l:opts[n-1] | exec "normal bDafunction(  ) {\n}\<Esc>bbhi" | endif
+  if 'fn,' == l:opts[n-1] | exec "normal bbDafunction(  ) {\n},\<Esc>bbbhi" | endif
+  if 'fn;' == l:opts[n-1] | exec "normal bbDafunction(  ) {\n};\<Esc>bbbhi" | endif
   if l:n >  1
-    if 'fn' == l:opts[n-2] | exec "normal bbDafunction ".opts[n-1]."(){\n}\<Esc>ba" | endif
+    if 'fn' == l:opts[n-2] | exec "normal bbDafunction ".opts[n-1]."(  ){\n}\<Esc>bhi" | endif
   endif
-  if 'cl' == l:opts[0] && l:n==1 | exec "normal Sconsole.log();\<Esc>ba" | endif
-  if 'cl' == l:opts[0] && l:n==2 | exec "normal Sconsole.log(".l:opts[1].");" | endif
+  if 'cl' == l:opts[0]
+    if l:n==1
+      exec "normal Sconsole.log(  );\<Esc>bhi"
+    else
+      exec "normal Sconsole.log( ".join(l:opts[1:-1], ' ')." );"
+    endif
+  endif
   "General end
 
   "PHP start
