@@ -548,6 +548,7 @@ autocmd BufEnter * set iskeyword=@,48-57,_,$,-,192-255
 " set ballooneval
 " vim: fdm=marker
 
+set spell
 let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
@@ -590,6 +591,7 @@ let g:user_emmet_settings = { 'javascript.jsx': { 'extends': 'jsx' } }
 autocmd FileType ejs.html,html,css,javascript.jsx EmmetInstall
 
 let g:ale_python_pylint_executable = 'python3'
+let g:matchup_matchparen_status_offscreen = 0
 
 " let dart_format_on_save = 1
 call plug#begin('~/plugged/')
@@ -613,7 +615,8 @@ Plug 'tpope/vim-ragtag'
 " Plug 'gregsexton/MatchTag'
 Plug 'plasticboy/vim-markdown'
 " Plug 'sheerun/vim-polyglot'
-Plug 'vim-scripts/matchit.zip'
+" Plug 'vim-scripts/matchit.zip'
+Plug 'andymass/vim-matchup'
 Plug 'vim-scripts/taglist.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'vim-scripts/vcscommand.vim'
