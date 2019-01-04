@@ -63,8 +63,8 @@ if bufname('')==''
   cd $HOME
   set fileencoding=utf-8
 endif
-set fileencodings=GB2312,utf-8,gbk,ucs-bom,GB8030,default,latin
-set fileformats=dos,unix
+" set fileencodings=GB2312,utf-8,gbk,ucs-bom,GB8030,default,latin
+" set fileformats=dos,unix
 " set encoding=utf-8
 set fileencodings=utf-bom,utf-8,gbk,gb2312,gb18030,cp936,latin1
 " set termencoding=utf-8

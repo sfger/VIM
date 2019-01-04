@@ -99,6 +99,7 @@ removeEventListener attachEvent detachEvent
 
 requestAnimationFrame cancelAnimationFrame
 
+classList add remove contains replace toggle
 className
 documentElement ownerDocument
 scrollIntoView 
