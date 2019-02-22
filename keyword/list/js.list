@@ -198,14 +198,29 @@ translate rotate scale transform setTransform
 
 setCustomValidity checkValidity
 
+shadowRoot
+
 jQuery parent parents find after before text show hide attr html toggleClass removeClass addClass
 append appendTo delegateTarget xhrFields
-
-React ReactDOM displayName render
-state setState getInitialState
-onClick
-dangerouslySetInnerHTML
 
 eslint-disable-next-line
 eslint-disable
 eslint-enable
+
+require export default
+http
+createServer listen
+
+statusCode setHeader end
+
+static
+
+React ReactDOM
+useState useReducer useContext lazy Suspense Component
+displayName render
+state setState getInitialState
+onClick
+dangerouslySetInnerHTML
+getDerivedStateFromError componentDidCatch
+createContext Provider Consumer
+contextType context
