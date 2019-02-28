@@ -554,11 +554,13 @@ let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
 
 let g:ale_linters = {
-  \'javascript': ['eslint', 'prettier'], 'typescript': ['eslint', 'prettier'],
+  \'javascript': ['eslint', 'prettier'],
+  \'typescript': ['eslint', 'prettier'],
   \'html': [ 'HTMLHint', 'proselint', 'prettier', 'tidy', 'eslint' ]
 \}
 let g:ale_fixers = {
-  \'javascript': [ 'prettier', 'eslint' ]
+  \'javascript': [ 'prettier', 'eslint' ],
+  \'typescript': [ 'prettier', 'eslint' ]
 \}
 let g:ale_java_javac_options = '-encoding UTF-8  -J-Duser.language=en'
 " let g:ale_sign_column_always = 1
