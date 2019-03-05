@@ -34,7 +34,7 @@ species
 toPrimitive
 toStringTag
 
-this length prototype arguments callee caller
+globalThis this length prototype arguments callee caller
 
 RegExp test exec lastIndex
 
@@ -125,6 +125,7 @@ style
 getElementsByClassName querySelector querySelectorAll
 
 contentDocument windowDocument ActiveXObject Microsoft XMLHTTP XMLHttpRequest withCredentials
+contentWindow postMessage
 setRequestHeader getResponseHeader getAllResponseHeaders responseText
 open send onreadystatechange status statusText
 DOMContentLoaded readyState complete visibilityState
