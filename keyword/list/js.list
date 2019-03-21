@@ -211,7 +211,7 @@ URL createObjectURL
 jQuery parent parents find after before text show hide attr html toggleClass removeClass addClass
 append appendTo delegateTarget xhrFields
 
-eslint-disable-next-line
+eslint-disable-next-line array-element-newline
 eslint-disable
 eslint-enable
 
