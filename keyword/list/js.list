@@ -98,6 +98,7 @@ addEventListener capture once passive
 removeEventListener attachEvent detachEvent
 
 requestAnimationFrame cancelAnimationFrame
+requestIdleCallback
 
 classList add remove contains replace toggle
 className
