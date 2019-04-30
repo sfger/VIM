@@ -1,3 +1,48 @@
+call plug#begin('~/plugged/')
+" Plug 'artur-shaik/vim-javacomplete2'
+Plug 'brooth/far.vim'
+Plug 'dkprice/vim-easygrep'
+" Plug 'Valloric/YouCompleteMe'
+" Plug 'marijnh/tern_for_vim', {'do': 'npm install'}
+Plug 'scrooloose/nerdtree'
+Plug 'jlanzarotta/bufexplorer'
+" Plug 'mattn/emmet-vim', { 'for': ['javascript.jsx', 'html', 'css'] }
+Plug 'mattn/emmet-vim'
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'godlygeek/tabular'
+Plug 'majutsushi/tagbar'
+Plug 'mxw/vim-jsx'
+Plug 'tpope/vim-surround'
+Plug 'othree/html5.vim'
+Plug 'tpope/vim-ragtag'
+" Plug 'nikvdp/ejs-syntax'
+" Plug 'briancollins/vim-jst'
+" Plug 'gregsexton/MatchTag'
+Plug 'plasticboy/vim-markdown'
+" Plug 'sheerun/vim-polyglot'
+" Plug 'vim-scripts/matchit.zip'
+Plug 'andymass/vim-matchup'
+Plug 'vim-scripts/taglist.vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'vim-scripts/vcscommand.vim'
+Plug 'tpope/vim-fugitive'
+" Plug 'sjl/gundo.vim'
+Plug 'tpope/vim-commentary'
+Plug 'pangloss/vim-javascript'
+Plug 'heavenshell/vim-jsdoc'
+Plug 'groenewege/vim-less'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'posva/vim-vue'
+Plug 'vim-scripts/YankRing.vim'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'w0rp/ale'
+Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss'] }
+Plug 'rhysd/vim-clang-format'
+Plug 'dart-lang/dart-vim-plugin'
+" Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+call plug#end()
+
 " Original _vimrc{{{
 source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
@@ -560,8 +605,10 @@ let g:ale_linters = {
 \}
 let g:ale_fixers = {
   \'javascript': [ 'prettier', 'eslint' ],
-  \'typescript': [ 'prettier', 'eslint' ]
+  \'typescript': [ 'prettier', 'eslint' ],
+  \'java': [ 'google_java_format' ]
 \}
+let g:ale_java_google_java_format_executable = "D:/projects/sa/google-java-format-1.7-all-deps.jar"
 let g:ale_java_javac_options = '-encoding UTF-8  -J-Duser.language=en'
 " let g:ale_sign_column_always = 1
 let g:ale_set_highlights = 0
@@ -599,48 +646,6 @@ let g:ale_python_pylint_executable = 'python3'
 let g:matchup_matchparen_status_offscreen = 0
 
 " let dart_format_on_save = 1
-call plug#begin('~/plugged/')
-" Plug 'artur-shaik/vim-javacomplete2'
-Plug 'brooth/far.vim'
-Plug 'dkprice/vim-easygrep'
-" Plug 'Valloric/YouCompleteMe'
-" Plug 'marijnh/tern_for_vim', {'do': 'npm install'}
-Plug 'scrooloose/nerdtree'
-Plug 'jlanzarotta/bufexplorer'
-Plug 'mattn/emmet-vim'
-Plug 'cakebaker/scss-syntax.vim'
-Plug 'godlygeek/tabular'
-Plug 'majutsushi/tagbar'
-Plug 'mxw/vim-jsx'
-Plug 'tpope/vim-surround'
-Plug 'othree/html5.vim'
-Plug 'tpope/vim-ragtag'
-" Plug 'nikvdp/ejs-syntax'
-" Plug 'briancollins/vim-jst'
-" Plug 'gregsexton/MatchTag'
-Plug 'plasticboy/vim-markdown'
-" Plug 'sheerun/vim-polyglot'
-" Plug 'vim-scripts/matchit.zip'
-Plug 'andymass/vim-matchup'
-Plug 'vim-scripts/taglist.vim'
-Plug 'leafgarland/typescript-vim'
-Plug 'vim-scripts/vcscommand.vim'
-Plug 'tpope/vim-fugitive'
-" Plug 'sjl/gundo.vim'
-Plug 'tpope/vim-commentary'
-Plug 'pangloss/vim-javascript'
-Plug 'heavenshell/vim-jsdoc'
-Plug 'groenewege/vim-less'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'posva/vim-vue'
-Plug 'vim-scripts/YankRing.vim'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'w0rp/ale'
-Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss'] }
-Plug 'rhysd/vim-clang-format'
-Plug 'dart-lang/dart-vim-plugin'
-call plug#end()
 
 command -range=% -nargs=* Test :echo GetSelectText(<line1>, <line2>)
 func GetSelectText(line1, line2)

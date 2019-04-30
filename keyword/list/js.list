@@ -14,6 +14,7 @@ try catch
 async await
 
 Number toFixed parseFloat parseInt
+Infinity
 
 String
 Boolean
@@ -37,6 +38,12 @@ toStringTag
 globalThis this length prototype arguments callee caller
 
 RegExp test exec lastIndex
+
+Int8Array Uint8Array Int16Array Blob
+FileReader readAsArrayBuffer readAsBinaryString readAsDataURL readAsText
+
+URL createObjectURL
+searchParams
 
 Object assign create entries keys freeze
 preventExtensions
@@ -160,6 +167,8 @@ replace match split search
 
 animationstart animationiteration animationend
 
+BroadcastChannel
+
 startsWith endsWith
 
 indexedDB open close
@@ -202,12 +211,11 @@ setCustomValidity checkValidity
 
 shadowRoot
 
-fetch credentials method headers body cache redirect referrer referrerPolicy integrity
+fetch method headers body cache redirect referrer referrerPolicy integrity
+credentials include same-origin omit
 AbortController signal abort
 Request
 Headers append delete set has getAll
-
-URL createObjectURL
 
 jQuery parent parents find after before text show hide attr html toggleClass removeClass addClass
 append appendTo delegateTarget xhrFields
@@ -225,7 +233,9 @@ statusCode setHeader end
 static
 
 React ReactDOM
-useState useReducer useContext lazy Suspense Component
+findDOMNode
+useState useReducer useContext useEffect useRef
+lazy Suspense Component
 displayName render
 state setState getInitialState
 onClick

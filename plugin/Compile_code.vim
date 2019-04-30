@@ -136,5 +136,5 @@ autocmd FileType c,cpp,java,php,javascript,less,scss,typescript,python,dart nnor
 autocmd FileType c,cpp,java,php,tmp,qf,javascript,less,scss,typescript,python,dart nnoremap <buffer><silent> ,h :call HideOutput()<cr>
 " autocmd FileType javascript,javascript.jsx,typescript,html,php,css,scss,less,ejs,wxml,ejs.html,wxss,dart nnoremap <buffer><silent> ,f :call FormatFile()<cr>
 autocmd FileType html,php,css,scss,less,ejs,wxml,ejs.html,wxss,dart nnoremap <buffer><silent> ,f :call FormatFile()<cr>
-autocmd FileType javascript,javascript.jsx,typescript nnoremap ,f :ALEFix<cr>
+autocmd FileType javascript,javascript.jsx,typescript,java nnoremap ,f :ALEFix<cr>
 autocmd FileType * set autoindent smartindent autochdir

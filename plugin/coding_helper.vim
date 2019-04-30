@@ -1,5 +1,6 @@
 autocmd BufEnter *              let @p = expand('%:p') ? expand('%:p') : getcwd()
 autocmd BufNewFile *.html       :L html
+autocmd FileType dart           setl dictionary+=$HOME\vimfiles\keyword\list\dart.list
 autocmd FileType java           setl dictionary+=$HOME\vimfiles\keyword\list\java.list
 autocmd FileType python         setl dictionary+=$HOME\vimfiles\keyword\list\python.list
 autocmd FileType php            setl dictionary+=$HOME\vimfiles\keyword\list\php.list
