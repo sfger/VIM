@@ -24,7 +24,7 @@ bindec decbin dechex decoct hexdec octdec base_convert
 
 strtoupper strtolower strlen chr str_repeat split strrev
 str_split ucwords  urldecode urlencode
-json_decode json_encode JSON_UNESCAPED_UNICODE
+json_decode json_encode JSON_UNESCAPED_UNICODE JSON_PRETTY_PRINT
 mb_internal_encoding mb_strlen mb_substr bin2hex hexdec decbin decoct dechex ord
 in_array array_key_exists array_change_key_case array_intersect
 gettype preg_match preg_replace htmlspecialchars htmlspecialchars_decode similar_text

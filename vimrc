@@ -1,5 +1,5 @@
 call plug#begin('~/plugged/')
-" Plug 'artur-shaik/vim-javacomplete2'
+Plug 'artur-shaik/vim-javacomplete2'
 Plug 'brooth/far.vim'
 Plug 'dkprice/vim-easygrep'
 " Plug 'Valloric/YouCompleteMe'
