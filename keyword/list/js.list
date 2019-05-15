@@ -3,7 +3,7 @@ var let const
 function return Function
 class extends
 
-Promise resolve reject then catch race all finally
+Promise resolve reject then catch race all allSettled finally
 
 import from
 

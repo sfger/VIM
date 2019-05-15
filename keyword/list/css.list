@@ -9,6 +9,7 @@ background background-color background-image background-position background-size
 background-attachment background-clip background-origin
 linear-gradient repeating-linear-gradient repeating-radial-gradient
 text-align vertical-align word-break break-all word-wrap break-word
+text-align-last justify
 overflow overflow-x overflow-y hidden visible auto
 text-overflow ellipsis white-space nowrap wrap
 opacity filter content
