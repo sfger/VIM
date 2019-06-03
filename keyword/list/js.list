@@ -46,6 +46,7 @@ URL createObjectURL
 searchParams
 
 Object assign create entries keys freeze
+setPrototypeOf
 preventExtensions
 defineProperty
 defineProperties
