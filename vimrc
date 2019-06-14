@@ -280,7 +280,7 @@ let Tlist_WinWidth = 25
 " NERD{{{
 map \nt :NERDTreeToggle<CR>
 map <S-CR> :NERDTreeToggle<CR>
-let NERDTreeIgnore=['\.exe$','\.gif$','\.png$','\.jpeg$','\.swf$','\.ttc$','^CVS$','^SVN$']
+let NERDTreeIgnore=['\.exe$','\.class$','\.gif$','\.png$','\.jpeg$','\.swf$','\.ttc$','^CVS$','^SVN$']
 " }}}
 
 " Char operation{{{
