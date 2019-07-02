@@ -45,7 +45,7 @@ FileReader readAsArrayBuffer readAsBinaryString readAsDataURL readAsText
 URL createObjectURL
 searchParams
 
-Object assign create entries keys freeze
+Object assign create entries fromEntries keys freeze
 setPrototypeOf
 preventExtensions
 defineProperty
