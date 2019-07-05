@@ -651,3 +651,26 @@ command -range=% -nargs=* Test :echo GetSelectText(<line1>, <line2>)
 func GetSelectText(line1, line2)
   return join(getline( a:line1, a:line2 ), "\n")
 endfunc
+
+command -range=% -nargs=* SortLine :call SortWithStringLength(<line1>, <line2>)
+func CompareStringLength(str1, str2)
+  let len1 = strlen( a:str1 )
+  let len2 = strlen( a:str2 )
+  return len1 == len2 ? 0 : len1 > len2 ? 1 : -1
+endfunc
+func SortWithStringLength( line1, line2 )
+  let lines = getline( a:line1, a:line2 )
+  let lines = sort( lines, "CompareStringLength" )
+  " let lines = join( lines, "\n" )
+  exec "normal ".(a:line2 - a:line1 + 1)."dd"
+  call append( line( "." ) - 1, lines )
+  " echo lines
+endfunc
+
+func! CloseHandler(channel)
+  while ch_status(a:channel, {'part': 'out'})
+    echomsg  ch_read(a:channel)
+  endwhile
+endfunc
+
+" job_start(command, {'close_cb': 'CloseHandler'})

@@ -45,20 +45,18 @@ FileReader readAsArrayBuffer readAsBinaryString readAsDataURL readAsText
 URL createObjectURL
 searchParams
 
-Object assign create entries fromEntries keys freeze
+Object is assign create entries fromEntries keys freeze seal
 setPrototypeOf
 preventExtensions
 defineProperty
 defineProperties
 getOwnPropertyDescriptor
-getOwnPropertyDescriptors
 getOwnPropertyNames
 getOwnPropertySymbols
 getPrototypeOf
-is
+getOwnPropertyDescriptors
 isExtensible
 isFrozen
-seal
 isSealed
 
 toString toLocaleString
