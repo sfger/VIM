@@ -89,7 +89,7 @@ endif
 
 " set group{{{
 " top{{{
-call pathogen#infect()
+" call pathogen#infect()
 filetype plugin on
 set cm=blowfish2
 set noundofile nocompatible
@@ -647,10 +647,35 @@ let g:matchup_matchparen_status_offscreen = 0
 
 " let dart_format_on_save = 1
 
-command -range=% -nargs=* Test :echo GetSelectText(<line1>, <line2>)
-func GetSelectText(line1, line2)
-  return join(getline( a:line1, a:line2 ), "\n")
+func GetSelectText()
+  " echo line("'<'") line("'>") col("'<") col("'>")
+  let line1 = line("'<")
+  let line2 = line("'>")
+  let col1 = col("'<")
+  let col2 = col("'>")
+  let ret = getline( line1, line2 )
+  let length = len( ret ) - 1
+  let ret[length] = strpart( ret[length], 0, col2 - 1 )
+  let ret[0] = strpart( ret[0], col1 - 1 )
+  return ret
 endfunc
+func ReplaceSelect( ret )
+  let line1 = line("'<")
+  let line2 = line("'>")
+  let col1 = col("'<")
+  let col2 = col("'>")
+  let ret = a:ret
+  let length = len( ret ) - 1
+
+  let str = getline( line2 )
+  let ret[length] .= strpart( str, col2 - 1 )
+  let str = line1 == line2 ? str : getline(line1)
+  let ret[0] = strpart(str, 0, col1 - 1) . ret[0]
+
+  exec "normal ".(line2 - line1 + 1)."dd"
+  call append( line( "." ) - 1, ret )
+endfunc
+command -range=% -nargs=* Test :call ReplaceSelect( ["Test"] )
 
 command -range=% -nargs=* SortLine :call SortWithStringLength(<line1>, <line2>)
 func CompareStringLength(str1, str2)
@@ -659,18 +684,17 @@ func CompareStringLength(str1, str2)
   return len1 == len2 ? 0 : len1 > len2 ? 1 : -1
 endfunc
 func SortWithStringLength( line1, line2 )
-  let lines = getline( a:line1, a:line2 )
-  let lines = sort( lines, "CompareStringLength" )
-  " let lines = join( lines, "\n" )
+  let ret = getline( a:line1, a:line2 )
+  let ret = sort( ret, "CompareStringLength" )
+  " echo ret
+  " let ret = join( ret, "\n" )
   exec "normal ".(a:line2 - a:line1 + 1)."dd"
-  call append( line( "." ) - 1, lines )
-  " echo lines
+  call append( line( "." ) - 1, ret )
 endfunc
 
-func! CloseHandler(channel)
-  while ch_status(a:channel, {'part': 'out'})
-    echomsg  ch_read(a:channel)
-  endwhile
-endfunc
-
+" func! CloseHandler(channel)
+"   while ch_status(a:channel, {'part': 'out'})
+"     echomsg  ch_read(a:channel)
+"   endwhile
+" endfunc
 " job_start(command, {'close_cb': 'CloseHandler'})
