@@ -677,7 +677,6 @@ func ReplaceSelect( ret )
 endfunc
 command -range=% -nargs=* Test :call ReplaceSelect( ["Test"] )
 
-command -range=% -nargs=* SortLine :call SortWithStringLength(<line1>, <line2>)
 func CompareStringLength(str1, str2)
   let len1 = strlen( a:str1 )
   let len2 = strlen( a:str2 )
@@ -691,10 +690,14 @@ func SortWithStringLength( line1, line2 )
   exec "normal ".(a:line2 - a:line1 + 1)."dd"
   call append( line( "." ) - 1, ret )
 endfunc
+command -range=% -nargs=* SortLine :call SortWithStringLength(<line1>, <line2>)
 
+" func! Handler(channel, msg)
+"   echo a:msg
+" endfunc
 " func! CloseHandler(channel)
-"   while ch_status(a:channel, {'part': 'out'})
-"     echomsg  ch_read(a:channel)
+"   while ch_status(a:channel, {'part': 'out'}) == 'buffered'
+"     echomsg ch_read(a:channel)
 "   endwhile
 " endfunc
 " job_start(command, {'close_cb': 'CloseHandler'})
