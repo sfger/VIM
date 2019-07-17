@@ -138,7 +138,9 @@ open send onreadystatechange status statusText
 DOMContentLoaded readyState complete visibilityState
 preventDefault stopPropagation stopImmediatePropagation returnValue cancelBubble
 createEvent initEvent dispatchEvent
+Event
 CustomEvent bubbles cancelable
+UIEvent FocusEvent MouseEvent WheelEvent KeyboardEvent
 
 new Image
 Date parse getFullYear getMonth getDate getHours getMinutes getSeconds getMilliseconds
