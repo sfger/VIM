@@ -13,6 +13,7 @@ text-align-last justify
 overflow overflow-x overflow-y hidden visible auto
 text-overflow ellipsis white-space nowrap wrap
 text-decoration underline line-through
+text-transform uppercase lowercase capitalize
 opacity filter content
 width height max-width max-height
 margin margin-left margin-right margin-top margin-bottom

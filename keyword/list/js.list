@@ -1,39 +1,20 @@
-var let const
-
-function return Function
+null undefined Boolean Number
+Function function return
 class extends
 
-Promise resolve reject then catch race all allSettled finally
-
-import from
-
+var let const static
 for if else case switch
 continue break
 try catch
 
+toFixed parseFloat parseInt Infinity
+
+Symbol hasInstance iterator asyncIterator isConcatSpreadable unscopables match replace search split species toPrimitive toStringTag
+
+Promise resolve reject then catch race all allSettled finally
 async await
 
-Number toFixed parseFloat parseInt
-Infinity
-
-String
-Boolean
-undefined
-null
-Array
-Symbol
-hasInstance
-iterator
-asyncIterator
-isConcatSpreadable
-unscopables
-match
-replace
-search
-split
-species
-toPrimitive
-toStringTag
+import from
 
 globalThis this length prototype arguments callee caller
 
@@ -233,8 +214,6 @@ http
 createServer listen
 
 statusCode setHeader end
-
-static
 
 React ReactDOM
 findDOMNode
