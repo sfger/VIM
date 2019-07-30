@@ -7,15 +7,17 @@ font font-size font-weight font-style font-family line-height
 color currentcolor transparent black white purple red green blue
 background background-color background-image background-position background-size background-repeat
 background-attachment background-clip background-origin
-linear-gradient repeating-linear-gradient repeating-radial-gradient
+linear-gradient repeating-linear-gradient repeating-radial-gradient conic-gradient
 text-align vertical-align word-break break-all word-wrap break-word
 text-align-last justify
+tab-size
 overflow overflow-x overflow-y hidden visible auto
 text-overflow ellipsis white-space nowrap wrap
 text-decoration underline line-through
 text-transform uppercase lowercase capitalize
 opacity filter content
-width height max-width max-height
+object-fit
+width height max-width max-height max-content min-content fit-content
 margin margin-left margin-right margin-top margin-bottom
 padding padding-left padding-right padding-top padding-bottom
 -webkit-background-clip text
@@ -63,3 +65,5 @@ animation-play-state animation-fill-mode keyframes
 infinite
 
 constant safe-area-inset-top safe-area-inset-right safe-area-inset-bottom safe-area-inset-left
+
+shape-outside
