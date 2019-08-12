@@ -130,7 +130,7 @@ new Image
 Date parse getFullYear getMonth getDate getHours getMinutes getSeconds getMilliseconds
 Math pow sqrt PI random floor ceil round cos sin
 Array from of indexOf push pop shift unshift reverse map reduce reduceRight filter includes forEach find findIndex fill
-String charAt fromCharCode charCodeAt toLowerCase toUpperCase
+String charAt fromCharCode fromCodePoint charCodeAt toLowerCase toUpperCase
 
 nextElementSibling previousElementSibling firstElementChild lastElementChild
 srcElement target
