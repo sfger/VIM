@@ -10,7 +10,13 @@ throws Exception
 System out println
 
 Integer
+valueOf intValue
+
 Double
+
+getClass
+getName
+isPrimitive
 
 String Integer
 URL openStream colse
@@ -20,3 +26,16 @@ BufferedReader readLine
 List ArrayList
 Collections sort
 Comparator compare
+
+instanceof
+
+reflect
+
+ParameterizedBean
+ParameterizedType
+getDeclaredFields
+getGenericType
+
+SuppressWarnings
+
+serialVersionUID

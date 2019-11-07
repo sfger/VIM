@@ -394,9 +394,9 @@ vnoremap ,arr "zygv"=Str2PHPArray(@z)<CR>Pgv
 
 " fn Dictionary{{{
 func! Dictionary(...)
-  let word = get(a:000,0)
+  let word = get(a:000, 0)
   let ttt='cmd /c start'
-  if g:os=='mac'
+  if has('mac')
     let ttt='open'
   endif
   :call system(ttt.' http://www.baidu.com/s?wd='.word)
@@ -601,7 +601,6 @@ let g:ale_python_pylint_executable = 'python3'
 let g:matchup_matchparen_status_offscreen = 0
 
 " let dart_format_on_save = 1
-
 func GetSelectText()
   " echo line("'<'") line("'>") col("'<") col("'>")
   let line1 = line("'<")
@@ -657,8 +656,9 @@ command -range=% -nargs=* SortLine :call SortWithStringLength(<line1>, <line2>)
 " endfunc
 " job_start(command, {'close_cb': 'CloseHandler'})
 
+"{{{
 call plug#begin('~/plugged/')
-Plug 'artur-shaik/vim-javacomplete2'
+" Plug 'artur-shaik/vim-javacomplete2'
 Plug 'brooth/far.vim'
 Plug 'dkprice/vim-easygrep'
 " Plug 'Valloric/YouCompleteMe'
@@ -684,7 +684,7 @@ Plug 'andymass/vim-matchup'
 Plug 'vim-scripts/taglist.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'vim-scripts/vcscommand.vim'
-Plug 'tpope/vim-fugitive'
+" Plug 'tpope/vim-fugitive'
 " Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-commentary'
 Plug 'pangloss/vim-javascript'
@@ -701,4 +701,5 @@ Plug 'rhysd/vim-clang-format'
 Plug 'dart-lang/dart-vim-plugin'
 " Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 call plug#end()
+"}}}
 

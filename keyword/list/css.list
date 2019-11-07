@@ -14,13 +14,14 @@ tab-size
 overflow overflow-x overflow-y hidden visible auto
 text-overflow ellipsis white-space nowrap wrap
 text-decoration underline line-through
-text-transform uppercase lowercase capitalize
+text-transform none uppercase lowercase capitalize
 opacity filter content
 object-fit
 width height max-width max-height max-content min-content fit-content
 margin margin-left margin-right margin-top margin-bottom
 padding padding-left padding-right padding-top padding-bottom
 -webkit-background-clip text
+valid invalid
 
 grid
 grid-template grid-template-areas grid-template-columns grid-template-rows
