@@ -202,6 +202,8 @@ AbortController signal abort
 Request
 Headers append delete set has getAll
 
+axios withCredentials timeout cancelToken CancelToken
+
 jQuery parent parents find after before text show hide attr html toggleClass removeClass addClass
 append appendTo delegateTarget xhrFields
 
@@ -226,3 +228,6 @@ dangerouslySetInnerHTML
 getDerivedStateFromError componentDidCatch
 createContext Provider Consumer
 contextType context
+
+test expect
+toBe toEqual

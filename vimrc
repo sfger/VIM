@@ -33,6 +33,32 @@ function! MyDiff()
 endfunction
 " }}}
 
+" common{{{
+" set cursorline cursorcolumn
+" hi cursorline guibg=grey8 term=bold
+set ph=15
+hi Pmenu guibg=purple guifg=white
+hi Pmenusel guibg=green guifg=black term=bold
+hi conceal guibg=green guifg=black term=bold
+
+hi Folded guifg=Yellow guibg=DarkGreen
+hi lin phpheredoc string
+hi normal guibg=black guifg=white
+set nu ai nobackup guifont=consolas:h16
+set autoindent smartindent autochdir
+set tabstop=2 softtabstop=2 shiftwidth=2 expandtab smarttab
+set mouse=a selection=exclusive selectmode=mouse,key
+set guioptions=EgrLt
+set wildmenu
+set whichwrap=b,s,<,>,[,]
+set ambiwidth=double
+set noswapfile
+set diffopt=context:5
+set scrolloff=0
+set invpaste paste
+" nnoremap :set invpaste paste? imap :set invpaste paste? set pastetoggle=
+" }}}
+
 "g:os{{{
 let g:os="unix"
 if has("win32")
@@ -97,32 +123,6 @@ set ff=unix ffs=unix,dos,mac
 " if has('gui_running')
 "   let do_syntax_sel_menu=1
 " endif
-" }}}
-
-" common{{{
-" set cursorline cursorcolumn
-" hi cursorline guibg=grey8 term=bold
-set ph=15
-hi Pmenu guibg=purple guifg=white
-hi Pmenusel guibg=green guifg=black term=bold
-hi conceal guibg=green guifg=black term=bold
-
-hi Folded guifg=Yellow guibg=DarkGreen
-hi lin phpheredoc string
-hi normal guibg=black guifg=white
-set nu ai nobackup guifont=consolas:h16
-set autoindent smartindent autochdir
-set tabstop=2 softtabstop=2 shiftwidth=2 expandtab smarttab
-set mouse=a selection=exclusive selectmode=mouse,key
-set guioptions=EgrLt
-set wildmenu
-set whichwrap=b,s,<,>,[,]
-set ambiwidth=double
-set noswapfile
-set diffopt=context:5
-set scrolloff=0
-set invpaste paste
-" nnoremap :set invpaste paste? imap :set invpaste paste? set pastetoggle=
 " }}}
 
 " Toggle show menu{{{
@@ -265,7 +265,7 @@ map <silent> \cmd <S-Down>
 " nmap \\. :echo strpart("Error  Deleted",7*(0==delete(expand("%:p:h")."/.".expand("%:t").".swp")),7)<cr>
 " }}}
 
-:ab beautify /* beautify preserve:start */<CR>/* beautify preserve:end */
+" :ab beautify /* beautify preserve:start */<CR>/* beautify preserve:end */
 
 " fn group{{{
 " fn Adjust_fontsize{{{
@@ -702,4 +702,3 @@ Plug 'dart-lang/dart-vim-plugin'
 " Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 call plug#end()
 "}}}
-
