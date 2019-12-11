@@ -265,6 +265,9 @@ map <silent> \cmd <S-Down>
 " nmap \\. :echo strpart("Error  Deleted",7*(0==delete(expand("%:p:h")."/.".expand("%:t").".swp")),7)<cr>
 " }}}
 
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 " :ab beautify /* beautify preserve:start */<CR>/* beautify preserve:end */
 
 " fn group{{{
@@ -659,6 +662,9 @@ command -range=% -nargs=* SortLine :call SortWithStringLength(<line1>, <line2>)
 "{{{
 call plug#begin('~/plugged/')
 " Plug 'artur-shaik/vim-javacomplete2'
+Plug 'junegunn/fzf'
+Plug 'mhinz/vim-grepper'
+Plug 'mileszs/ack.vim'
 Plug 'brooth/far.vim'
 Plug 'dkprice/vim-easygrep'
 " Plug 'Valloric/YouCompleteMe'
