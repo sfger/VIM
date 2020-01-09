@@ -265,9 +265,9 @@ map <silent> \cmd <S-Down>
 " nmap \\. :echo strpart("Error  Deleted",7*(0==delete(expand("%:p:h")."/.".expand("%:t").".swp")),7)<cr>
 " }}}
 
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
+" if executable('ag')
+"   let g:ackprg = 'ag --vimgrep'
+" endif
 " :ab beautify /* beautify preserve:start */<CR>/* beautify preserve:end */
 
 " fn group{{{
@@ -542,7 +542,8 @@ let g:rust_recommended_style = 0
 " C-x C-t
 set thesaurus=$HOME\vimfiles\keyword\list\en.list
 " set path=.,.\**,E:\ShellAlias\GccDir\MinGW\include
-set path=.,E:\ShellAlias\GccDir\MinGW\include
+" set path=.,E:\ShellAlias\GccDir\MinGW\include
+set path=.,C:/Strawberry/c/x86_64-w64-mingw32/include,C:/Strawberry/c/lib/gcc/x86_64-w64-mingw32/8.3.0/include/c++
 set fdm=marker
 nmap <silent> \host :tabnew C:\Windows\System32\drivers\etc\hosts<CR>
 nmap \fd :NERDTreeFind<CR>
@@ -556,9 +557,11 @@ let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
 
+" \'javascript': ['eslint', 'prettier'],
 let g:ale_linters = {
-  \'javascript': ['eslint', 'prettier'],
-  \'typescript': ['eslint', 'prettier'],
+  \'cpp': ['cppcheck', 'gcc'],
+  \'c': ['cppcheck' ,'gcc'],
+  \'python': ['pylint'],
   \'html': [ 'HTMLHint', 'proselint', 'prettier', 'tidy', 'eslint' ]
 \}
 let g:ale_fixers = {
@@ -599,6 +602,7 @@ let maplocalleader=","
 let g:user_emmet_install_global = 0
 let g:user_emmet_settings = { 'javascript.jsx': { 'extends': 'jsx' } }
 autocmd FileType ejs.html,html,css,javascript.jsx EmmetInstall
+
 
 let g:ale_python_pylint_executable = 'python3'
 let g:matchup_matchparen_status_offscreen = 0
@@ -662,7 +666,8 @@ command -range=% -nargs=* SortLine :call SortWithStringLength(<line1>, <line2>)
 "{{{
 call plug#begin('~/plugged/')
 " Plug 'artur-shaik/vim-javacomplete2'
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-grepper'
 Plug 'mileszs/ack.vim'
 Plug 'brooth/far.vim'
@@ -703,7 +708,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'w0rp/ale'
 Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss'] }
-Plug 'rhysd/vim-clang-format'
+" Plug 'rhysd/vim-clang-format'
 Plug 'dart-lang/dart-vim-plugin'
 " Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 call plug#end()

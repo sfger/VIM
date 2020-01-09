@@ -11,6 +11,7 @@ System out println
 
 Integer
 valueOf intValue
+equals
 
 Double
 
@@ -26,6 +27,7 @@ BufferedReader readLine
 List ArrayList
 Collections sort
 Comparator compare
+Arrays asList
 
 instanceof
 
@@ -39,3 +41,5 @@ getGenericType
 SuppressWarnings
 
 serialVersionUID
+
+SafeVarargs
