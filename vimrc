@@ -667,6 +667,9 @@ func CDProjectRoot()
 endfunc
 command -range=% -nargs=* CDR :call CDProjectRoot()
 
+map ,s :let tmp = expand('<cword>') <Bar> exec("Rg ".tmp)<CR>
+map ,S :CDR<CR>:let tmp = expand('<cword>') <Bar> exec("Rg ".tmp)<CR>
+
 " func! Handler(channel, msg)
 "   echo a:msg
 " endfunc
