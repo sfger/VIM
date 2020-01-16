@@ -102,6 +102,8 @@ func! Run()
     silent! exe '%!node-sass --output-style compact '.bin_file.'.scss'
   elseif 'dart' == l:ft
     silent! exe '%!dart '.bin_file.'.dart'
+  elseif 'groovy' == l:ft
+    silent! exe '%!groovy '.bin_file.'.gradle'
   endif
 
   silent! exe src_winnr . 'wincmd w'
@@ -132,8 +134,8 @@ func! FormatFile()
 endfunc
 
 autocmd FileType c,cpp,java,php,javascript,typescript nnoremap <buffer><silent> ,c :call Compile()<cr>
-autocmd FileType c,cpp,java,php,javascript,less,scss,typescript,python,dart nnoremap <buffer><silent> ,r :call Run()<cr>
-autocmd FileType c,cpp,java,php,tmp,qf,javascript,less,scss,typescript,python,dart nnoremap <buffer><silent> ,h :call HideOutput()<cr>
+autocmd FileType c,cpp,java,php,javascript,less,scss,typescript,python,dart,groovy nnoremap <buffer><silent> ,r :call Run()<cr>
+autocmd FileType c,cpp,java,php,tmp,qf,javascript,less,scss,typescript,python,dart,groovy nnoremap <buffer><silent> ,h :call HideOutput()<cr>
 " autocmd FileType javascript,javascript.jsx,typescript,html,php,css,scss,less,ejs,wxml,ejs.html,wxss,dart nnoremap <buffer><silent> ,f :call FormatFile()<cr>
 autocmd FileType html,php,css,scss,less,ejs,wxml,ejs.html,wxss,dart nnoremap <buffer><silent> ,f :call FormatFile()<cr>
 autocmd FileType javascript,javascript.jsx,typescript,java nnoremap ,f :ALEFix<cr>

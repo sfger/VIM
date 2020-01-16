@@ -606,6 +606,7 @@ autocmd FileType ejs.html,html,css,javascript.jsx EmmetInstall
 
 let g:ale_python_pylint_executable = 'python3'
 let g:matchup_matchparen_status_offscreen = 0
+" let g:EasyGrepRoot = "repository"
 
 " let dart_format_on_save = 1
 func GetSelectText()
@@ -652,6 +653,19 @@ func SortWithStringLength( line1, line2 )
   call append( line( "." ) - 1, ret )
 endfunc
 command -range=% -nargs=* SortLine :call SortWithStringLength(<line1>, <line2>)
+
+command -range=% -nargs=* S :cd ..
+
+func GetProjectRoot()
+  let ret = trim(system( "git rev-parse --show-toplevel" ))
+  return ret
+endfunc
+
+func CDProjectRoot()
+  exec(":cd ".GetProjectRoot())
+  :pwd
+endfunc
+command -range=% -nargs=* CDR :call CDProjectRoot()
 
 " func! Handler(channel, msg)
 "   echo a:msg
