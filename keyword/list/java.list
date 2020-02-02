@@ -19,7 +19,8 @@ getClass
 getName
 isPrimitive
 
-String Integer
+String substring
+Integer
 URL openStream colse
 InputStreamReader
 BufferedReader readLine
@@ -43,3 +44,7 @@ SuppressWarnings
 serialVersionUID
 
 SafeVarargs
+
+CharSequence subSequence charAt length
+
+NumberFormatException
