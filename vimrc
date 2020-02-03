@@ -723,7 +723,7 @@ Plug 'posva/vim-vue'
 Plug 'vim-scripts/YankRing.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss'] }
 " Plug 'rhysd/vim-clang-format'
 Plug 'dart-lang/dart-vim-plugin'
