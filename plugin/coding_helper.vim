@@ -6,7 +6,7 @@ autocmd FileType python         setl dictionary+=$HOME\vimfiles\keyword\list\pyt
 autocmd FileType php            setl dictionary+=$HOME\vimfiles\keyword\list\php.list
 autocmd FileType c,C,cpp        setl dictionary+=$HOME\vimfiles\keyword\list\cpp.list
 autocmd FileType css,lett,scss,sass        setl dictionary+=$HOME\vimfiles\keyword\list\css.list
-autocmd FileType javascript,xhtml,html,htm,wxml setl dictionary+=$HOME\vimfiles\keyword\list\js.list
+autocmd FileType javascript,typescript,xhtml,html,htm,wxml setl dictionary+=$HOME\vimfiles\keyword\list\js.list
 imap <C-CR> <C-x><C-k>
 
 map \at :call AppendTime()<CR>
