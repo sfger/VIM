@@ -1,3 +1,6 @@
+stylelint-disable
+stylelint-enable
+
 inherit
 display inline-block block inline flex table table-cell table-layout -webkit-inline-box
 border border-left border-right border-top border-bottom border-radius box-shadow

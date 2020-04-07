@@ -158,8 +158,8 @@ map <silent> <C-S-Right> :let tmp = tabpagenr() <Bar> if tmp==tabpagenr("$") <Ba
 
 nnoremap <A-Up> :ALEPrevious<CR>
 nnoremap <A-Down> :ALENext<CR>
-nnoremap <S-Left>  :tabp<CR>
-nnoremap <S-Right> :tabn<CR>
+nnoremap <A-Left>  :tabp<CR>
+nnoremap <A-Right> :tabn<CR>
 for a in range(1,9)
   exe 'map <A-' . a . '> ' . a . 'gt'
 endfor
@@ -565,12 +565,12 @@ let g:ale_linters = {
   \'html': [ 'HTMLHint', 'proselint', 'prettier', 'tidy', 'eslint' ]
 \}
 let g:ale_fixers = {
-  \'javascript': [ 'eslint', 'tslint' ],
+  \'javascript': [ 'eslint' ],
   \'typescript': [ 'eslint', 'tslint' ],
   \'java': [ 'google_java_format' ]
 \}
 let g:ale_java_google_java_format_executable = "D:/projects/sa/google-java-format-1.7-all-deps.jar"
-let g:ale_java_javac_options = '-encoding UTF-8  -J-Duser.language=en'
+let g:ale_java_javac_options = '-encoding UTF-8 -J-Duser.language=en'
 " let g:ale_sign_column_always = 1
 let g:ale_set_highlights = 0
 "在vim自带的状态栏中整合ale
@@ -669,6 +669,7 @@ command -range=% -nargs=* CDR :call CDProjectRoot()
 
 map ,s :let tmp = expand('<cword>') <Bar> exec("Rg ".tmp)<CR>
 map ,S :CDR<CR>:let tmp = expand('<cword>') <Bar> exec("Rg ".tmp)<CR>
+map ,F :FZF -e<CR>
 
 " func! Handler(channel, msg)
 "   echo a:msg

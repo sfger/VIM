@@ -140,7 +140,7 @@ moveRow
 currentStyle getComputedStyle
 IntersectionObserver
 
-insertAdjacentHTML beforeBegin afterBegin beforeEnd afterEnd
+insertAdjacentHTML beforebegin afterbegin beforeend afterend
 insertBefore createElement createTextNode replaceChild appendChild removeChild cloneNode
 createAttribute removeAttribute setAttribute getAttribute hasAttribute createDocumentFragment
 onsubmit onclick onload onerror
