@@ -271,8 +271,8 @@ map <silent> \cmd <S-Down>
 " :ab beautify /* beautify preserve:start */<CR>/* beautify preserve:end */
 
 " fn group{{{
-" fn Adjust_fontsize{{{
-func! Adjust_fontsize(...)
+" fn AdjustFontSize{{{
+func! AdjustFontSize(...)
   let l:sel = get(a:000,0)
   let l:font = &gfn
   let l:temp = split(l:font, ':')
@@ -287,8 +287,8 @@ func! Adjust_fontsize(...)
   endif
   exec(':set guifont='.join(l:temp, ':'))
 endfunc
-nmap <silent> <A-+> :call Adjust_fontsize('inc')<CR>
-nmap <silent> <A--> :call Adjust_fontsize('dec')<CR>
+nmap <silent> <A-+> :call AdjustFontSize('inc')<CR>
+nmap <silent> <A--> :call AdjustFontSize('dec')<CR>
 " }}}
 
 " fn MY_abbreviate{{{
@@ -680,6 +680,30 @@ map ,F :FZF -e<CR>
 "   endwhile
 " endfunc
 " job_start(command, {'close_cb': 'CloseHandler'})
+
+let g:tagbar_type_typescript = {
+    \ 'ctagstype' : 'typescript',
+    \ 'kinds'     : [
+      \ 'C:constant',
+      \ 'G:generator',
+      \ 'a:alias',
+      \ 'c:class',
+      \ 'e:enumerator',
+      \ 'f:function',
+      \ 'g:enum',
+      \ 'i:interface',
+      \ 'm:method',
+      \ 'n:namespace',
+      \ 'p:property',
+      \ 'v:variable',
+      \ 'z:parameter'
+    \ ],
+    \ 'sro'        : '.',
+    \ 'kind2scope' : {
+      \ 'C' : 'contant',
+      \ 'c' : 'class'
+    \ }
+\ }
 
 "{{{
 call plug#begin('~/plugged/')
