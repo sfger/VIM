@@ -26,7 +26,9 @@ let branch = trim(system('git rev-parse --symbolic --branches'))
 set laststatus=2
 "set statusline=%<\ %n:%f\ %m%r%y%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
 set statusline=
-set statusline+=%2*\ %{branch}\ 
+if branch != ""
+  set statusline+=%2*\ %{branch}\ 
+endif
 set statusline+=%1*\ %{bufname('')==''?getcwd():expand('%:p')}%r%m\ 
 "set statusline+=%2*\ %{&ff=='unix'?'\\n':(&ff=='mac'?'\\r':'\\r\\n')}\
 set statusline+=%=%3*\ %{&ft==''?'txt':&ft}\ 
