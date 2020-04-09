@@ -22,13 +22,19 @@
 "         Just use it, and change it.
 "         When you edit it, do not erase trailing-blanks.
 
-let branch = trim(system('git rev-parse --symbolic --branches'))
+func GetProjectBranch()
+  let ret = trim(system( "git rev-parse --symbolic --branches" ))
+  if ret == "fatal: not a git repository (or any of the parent directories): .git"
+    let ret = ""
+  endif
+  return ret
+endfunc
+let branch=""
+autocmd BufEnter *  let branch=GetProjectBranch()
 set laststatus=2
 "set statusline=%<\ %n:%f\ %m%r%y%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
 set statusline=
-if branch != ""
-  set statusline+=%2*\ %{branch}\ 
-endif
+set statusline+=%2*%{branch}
 set statusline+=%1*\ %{bufname('')==''?getcwd():expand('%:p')}%r%m\ 
 "set statusline+=%2*\ %{&ff=='unix'?'\\n':(&ff=='mac'?'\\r':'\\r\\n')}\
 set statusline+=%=%3*\ %{&ft==''?'txt':&ft}\ 
