@@ -566,7 +566,7 @@ let g:ale_linters = {
 \}
 let g:ale_fixers = {
   \'javascript': [ 'eslint' ],
-  \'typescript': [ 'eslint', 'tslint' ],
+  \'typescript': [ 'eslint', 'tslint', 'prettier' ],
   \'java': [ 'google_java_format' ]
 \}
 let g:ale_java_google_java_format_executable = "D:/projects/sa/google-java-format-1.7-all-deps.jar"
@@ -666,9 +666,10 @@ func CDProjectRoot()
   :pwd
 endfunc
 command -range=% -nargs=* CDR :call CDProjectRoot()
+command -range=% -nargs=* CD :cd %:p:h
 
 map ,s :let tmp = expand('<cword>') <Bar> exec("Rg ".tmp)<CR>
-map ,S :CDR<CR>:let tmp = expand('<cword>') <Bar> exec("Rg ".tmp)<CR>
+map ,S :CDR<CR>:let tmp = expand('<cword>') <Bar> exec("Rg ".tmp)<CR><CD><CR>
 map ,F :FZF -e<CR>
 
 " func! Handler(channel, msg)

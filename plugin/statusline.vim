@@ -29,8 +29,17 @@ func GetProjectBranch()
   endif
   return ret
 endfunc
+
+func SetBranchBar()
+  let br = GetProjectBranch()
+  if br != ""
+    let br = "  " . br . " "
+  endif
+  return br
+endfunc
+
 let branch=""
-autocmd BufEnter *  let branch=GetProjectBranch()
+autocmd BufEnter *  let branch=SetBranchBar()
 set laststatus=2
 "set statusline=%<\ %n:%f\ %m%r%y%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
 set statusline=
