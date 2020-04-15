@@ -566,7 +566,7 @@ let g:ale_linters = {
 \}
 let g:ale_fixers = {
   \'javascript': [ 'eslint' ],
-  \'typescript': [ 'eslint', 'tslint', 'prettier' ],
+  \'typescript': [ 'eslint', 'tslint' ],
   \'java': [ 'google_java_format' ]
 \}
 let g:ale_java_google_java_format_executable = "D:/projects/sa/google-java-format-1.7-all-deps.jar"
