@@ -669,7 +669,7 @@ command -range=% -nargs=* CDR :call CDProjectRoot()
 command -range=% -nargs=* CD :cd %:p:h
 
 map ,s :let tmp = expand('<cword>') <Bar> exec("Rg ".tmp)<CR>
-map ,S :CDR<CR>:let tmp = expand('<cword>') <Bar> exec("Rg ".tmp)<CR><CD><CR>
+map ,S :CDR<CR>:let tmp = expand('<cword>') <Bar> exec("Rg ".tmp)<CR>
 map ,F :FZF -e<CR>
 
 " func! Handler(channel, msg)
