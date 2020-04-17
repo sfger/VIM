@@ -231,3 +231,6 @@ contextType context
 
 test expect
 toBe toEqual
+
+
+Exclude Extract NonNullable ReturnType InstanceType
