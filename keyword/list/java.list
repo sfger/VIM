@@ -6,6 +6,7 @@ serialVersionUID
 synchronized
 
 throws Exception
+printStackTrace
 
 System out println
 
@@ -37,6 +38,8 @@ reflect
 ParameterizedBean
 ParameterizedType
 getDeclaredFields
+getDeclaredField
+setAccessible
 getGenericType
 
 SuppressWarnings
