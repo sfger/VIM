@@ -16,7 +16,11 @@ equals
 
 Double
 
+class
 getClass
+getSuperclass
+getGenericSuperclass
+getActualTypeArguments
 getName
 isPrimitive
 
