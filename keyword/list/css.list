@@ -63,6 +63,8 @@ scale scaleX scaleY scale3d
 skew skewX skewY
 backface-visibility
 
+drop-shadow
+
 animation
 animation-name animation-duration animation-timing-function animation-delay animation-iteration-counta animation-direction
 animation-play-state animation-fill-mode keyframes
