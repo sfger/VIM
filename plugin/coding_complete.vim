@@ -89,7 +89,7 @@ function! CodingComplete()
   endif
   if 'cl' == l:opts[0]
     if l:n==1
-      exec "normal Sconsole.log(  );\<Esc>bhi"
+      exec "normal Sconsole.log();\<Esc>ba"
     else
       exec "normal Sconsole.log( ".join(l:opts[1:-1], ' ')." );"
     endif
