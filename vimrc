@@ -706,6 +706,8 @@ let g:tagbar_type_typescript = {
     \ }
 \ }
 
+inoremap <expr> <Enter> coc#pum#visible() ? coc#pum#confirm() : "\<Enter>"
+
 "{{{
 call plug#begin('~/plugged/')
 " Plug 'artur-shaik/vim-javacomplete2'
@@ -754,5 +756,6 @@ Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['javascript', 'type
 " Plug 'rhysd/vim-clang-format'
 Plug 'dart-lang/dart-vim-plugin'
 " Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 "}}}

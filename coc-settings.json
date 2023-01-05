@@ -1,0 +1,4 @@
+{
+  "coc.preferences.useQuickfixForLocations": true,
+  "coc.preferences.extensionUpdateCheck": "daily"
+}
