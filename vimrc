@@ -48,7 +48,7 @@ set nu ai nobackup guifont=consolas:h16
 set autoindent smartindent autochdir
 set tabstop=2 softtabstop=2 shiftwidth=2 expandtab smarttab
 set mouse=a selection=exclusive selectmode=mouse,key
-set guioptions=EgrLt
+set guioptions=grLt
 set wildmenu
 set whichwrap=b,s,<,>,[,]
 set ambiwidth=double
@@ -351,7 +351,7 @@ func! Math_line(...)
     else
       let ret = ret / n
     endif
-  elseif
+  else
     return ''
   endif
   return ret
@@ -670,7 +670,7 @@ command -range=% -nargs=* CD :cd %:p:h
 
 map ,s :let tmp = expand('<cword>') <Bar> exec("Rg ".tmp)<CR>
 map ,S :CDR<CR>:let tmp = expand('<cword>') <Bar> exec("Rg ".tmp)<CR>
-map ,F :FZF -e<CR>
+map ,F :FZF<CR>
 
 " func! Handler(channel, msg)
 "   echo a:msg
@@ -706,7 +706,7 @@ let g:tagbar_type_typescript = {
     \ }
 \ }
 
-inoremap <expr> <Enter> coc#pum#visible() ? coc#pum#confirm() : "\<Enter>"
+" inoremap <expr> <Enter> coc#pum#visible() ? coc#pum#confirm() : "\<Enter>"
 
 "{{{
 call plug#begin('~/plugged/')
@@ -737,7 +737,7 @@ Plug 'plasticboy/vim-markdown'
 " Plug 'sheerun/vim-polyglot'
 " Plug 'vim-scripts/matchit.zip'
 Plug 'andymass/vim-matchup'
-Plug 'vim-scripts/taglist.vim'
+" Plug 'vim-scripts/taglist.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'vim-scripts/vcscommand.vim'
 " Plug 'tpope/vim-fugitive'
@@ -756,6 +756,6 @@ Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['javascript', 'type
 " Plug 'rhysd/vim-clang-format'
 Plug 'dart-lang/dart-vim-plugin'
 " Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 "}}}
